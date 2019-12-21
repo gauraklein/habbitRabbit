@@ -18,8 +18,9 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "babel-preset-expo": "~8.0.0",
-    "@babel/core": "^7.0.0"
+    "reactotron-react-native": "^4.0.2"
   },
   "private": true
 }
