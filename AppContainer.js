@@ -19,13 +19,16 @@ const AppContainer = (props) => {
 
 const mapStateToProps = (state) => {
    return {
-       test: state.test
+       test: state.test,
+       habbit: state.habbit,
+       habbitDailyCount: state.habbitDailyCount
    }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        testFunction: () => dispatch(testFunction())
+        testFunction: () => dispatch(testFunction()),
+        handleHabbitCheckin: () => dispatch(handleHabbitCheckin())
     }
 };
 

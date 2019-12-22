@@ -1,0 +1,1 @@
+export const HABBIT_CHECKIN = 'HABBIT_CHECKIN'
