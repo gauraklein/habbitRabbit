@@ -1,6 +1,6 @@
 import {HABBIT_CHECKIN} from "./HabbitViewActions";
 
-export const habbitView = (state = {}, action) => {
+export const habbitView = (state = {habbitDailyCount: 0}, action) => {
     switch (action.type) {
         case HABBIT_CHECKIN: {
             return {

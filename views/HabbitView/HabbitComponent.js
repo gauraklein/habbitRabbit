@@ -6,7 +6,7 @@ export const HabbitComponent = (props) => {
     console.log(props);
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>TESTING HABBIT VIEW</Text>
+            <Text style={styles.text}>{props.habbit}</Text>
             <Text style={styles.text} onPress={props.testFunction.bind(this)}>{props.test}</Text>
         </View>
     )

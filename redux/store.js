@@ -4,9 +4,13 @@ import thunk from "redux-thunk";
 
 const composedEnhancer = compose( applyMiddleware(thunk));
 
-const initStore = () => createStore(rootReducer, {
-    test: 'test'
-},
+const initialState = {
+    test: 'test',
+    habbit: 'Code',
+    habbitDailyCount: 0
+}
+
+const initStore = () => createStore(rootReducer, {} = initialState,
     composedEnhancer);
 
 module.exports = {
