@@ -1,4 +1,4 @@
-export const TEST_ACTION = 'TEST_ACTION';
+export const TEST_ACTION = 'TEST_ACTION_PRESS';
 
 export const testFunction = () => {
     alert('TEST FUNCTION')

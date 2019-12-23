@@ -7,7 +7,7 @@ export const HabbitComponent = (props) => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>{props.habbit}</Text>
-            <Text style={styles.text} onPress={props.testFunction.bind(this)}>{props.test}</Text>
+            <Text style={styles.text} onPress={props.testFunction.bind(this)}>{props.habbitDailyCount}</Text>
         </View>
     )
 }

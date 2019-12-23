@@ -18,6 +18,7 @@ const AppContainer = (props) => {
 };
 
 const mapStateToProps = (state) => {
+    console.log(state, 'this is the state from appContainer')
    return {
        test: state.test,
        habbit: state.habbit,

@@ -1,11 +1,11 @@
-import {HABBIT_CHECKIN} from "./HabbitViewActions";
 
-export const habbitView = (state = {habbitDailyCount: 0}, action) => {
+
+ const habbitViewReducer = (state = {habbitDailyCount: 0}, action) => {
     switch (action.type) {
         case HABBIT_CHECKIN: {
             return {
                 ...state,
-                habbitDailyCount: habbitDailyCount++
+                habbitDailyCount: habbitDailyCount + 1
             }
         }
             break;
@@ -13,6 +13,6 @@ export const habbitView = (state = {habbitDailyCount: 0}, action) => {
             return state;
             break;
     }
+};
 
-
-}
+export default habbitViewReducer;
