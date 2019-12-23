@@ -3,9 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import { HabbitComponent } from './views/HabbitView/HabbitComponent'
 import {connect} from 'react-redux'
 
-import { testFunction} from "./redux/actions/testAction";
-
-
+// import { testFunction} from "./redux/actions/testAction";
+import { handleHabbitCheckin } from "./views/HabbitView/HabbitViewActions";
 
 
 const AppContainer = (props) => {
@@ -18,14 +17,16 @@ const AppContainer = (props) => {
 };
 
 const mapStateToProps = (state) => {
+    console.log(state, 'this is the state from appContainer')
    return {
-       test: state.test
+       habbit: state.habbit,
+       habbitDailyCount: state.habbitDailyCount
    }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        testFunction: () => dispatch(testFunction())
+        handleHabbitCheckin: () => dispatch(handleHabbitCheckin())
     }
 };
 
