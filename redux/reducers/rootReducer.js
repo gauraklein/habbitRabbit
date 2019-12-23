@@ -1,4 +1,3 @@
-import {TEST_ACTION} from "../actions/testAction";
 import {HABBIT_CHECKIN} from "../../views/HabbitView/HabbitViewActions";
 
 
@@ -6,7 +5,7 @@ const initState = {
     test: 'testilkjlkng',
     habbit: 'C0d3',
     habbitDailyCount: 0
-}
+};
 
 const rootReducer = (state = initState, action) => {
 
@@ -14,18 +13,14 @@ const rootReducer = (state = initState, action) => {
 
     switch (action.type) {
         case HABBIT_CHECKIN: {
+            console.log('hit habbit check on reducer')
+            state.habbitDailyCount++
             return {
-                ...state,
-                habbitDailyCount: habbitDailyCount + 1
+                ...state
             }
         }
             break;
-        case TEST_ACTION: {
-            console.log('hit reducer')
-            state.habbitDailyCount++
-            return state
-        }
-            break;
+
         default:
             console.log('hit reducer no action')
 
