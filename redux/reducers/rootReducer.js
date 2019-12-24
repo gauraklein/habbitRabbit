@@ -3,7 +3,7 @@ import {HABBIT_CHECKIN} from "../../views/HabbitView/HabbitViewActions";
 
 const initState = {
     test: 'testilkjlkng',
-    habbit: 'C0d3',
+    habbit: 'habbit goes here',
     habbitDailyCount: 0
 };
 
