@@ -13,11 +13,13 @@ export const AddHabbitComponent = (props) => {
             <TextInput
                 label='Habbit'
                 placeholder="habbit"
-                value={props.habbitInput}
+                // value={}
+                // onChangeText={}
+
                 />
                 <Button
                 title='Add Habbit'
-                onPress={props.handleAddHabbit.bind(props.habbitInput)}/>
+                onPress={props.handleAddHabbit.bind(TextInput.value)}/>
         </View>
     )
 }
