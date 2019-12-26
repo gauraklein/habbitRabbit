@@ -16,6 +16,7 @@ export const HabbitComponent = (props) => {
             </View>
 
             <View style={styles.container}>
+
                 <View style={styles.container}>
                     <Text style={styles.text}>{props.habbitDailyCount}</Text>
                     <Button
@@ -24,7 +25,10 @@ export const HabbitComponent = (props) => {
                         />
                 </View>
 
-                <View style={styles.container}></View>
+                <View style={styles.container}>
+
+
+                </View>
 
             </View>
 
