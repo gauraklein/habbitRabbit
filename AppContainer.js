@@ -42,7 +42,8 @@ const mapStateToProps = (state) => {
        habbitDailyCount: state.habbitDailyCount,
        habbitInput: state.habbitInput,
        habbitToAdd: state.habbitToAdd,
-       appView: state.appView
+       appView: state.appView,
+       habbitArray: state.habbitArray
    }
 };
 

@@ -7,7 +7,19 @@ const initState = {
     habbitDailyCount: 0,
     habbitInput: "",
     habbitToAdd: "",
-    appView: "HabbitView"
+    appView: "HabbitView",
+    habbitArray: [
+        {
+            habbit: "Test",
+            habbitId: 1,
+            habbitDailyCount: 0
+        },
+        {
+            habbit:"test for second",
+            habbitId: 2,
+            habbitDailyCount: 0
+        }
+    ]
 };
 
 const rootReducer = (state = initState, action) => {
