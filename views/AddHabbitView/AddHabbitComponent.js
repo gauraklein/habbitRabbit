@@ -21,7 +21,7 @@ export const AddHabbitComponent = (props) => {
                     />
                     <Button
                     title='Add Habbit'
-                    onPress={props.handleAddHabbit.bind(this)}
+                    onPress={props.handleAddHabbit.bind(this, props.habbitToAdd, props.habbitArray.length)}
                     />
             </View>
 

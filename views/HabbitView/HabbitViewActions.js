@@ -1,11 +1,12 @@
 export const HABBIT_CHECKIN = 'HABBIT_CHECKIN';
 export const ADD_HABBIT_VIEW = 'ADD_HABBIT_VIEW';
 
-export const handleHabbitCheckin = () => {
-    console.log('habbit checkin function')
+export const handleHabbitCheckin = (habbitId) => {
+    console.log('habbit checkin function', habbitId)
     return (dispatch) => {
         dispatch({
-            type: HABBIT_CHECKIN
+            type: HABBIT_CHECKIN,
+            payload: habbitId
         })
     }
 }

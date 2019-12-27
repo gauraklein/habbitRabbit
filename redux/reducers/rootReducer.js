@@ -7,7 +7,19 @@ const initState = {
     habbitDailyCount: 0,
     habbitInput: "",
     habbitToAdd: "",
-    appView: "HabbitView"
+    appView: "HabbitView",
+    habbitArray: [
+        {
+            habbit: "Habbit 1",
+            habbitId: 0,
+            habbitDailyCount: 0
+        },
+        {
+            habbit:"Habbit 2",
+            habbitId: 1,
+            habbitDailyCount: 0
+        }
+    ]
 };
 
 const rootReducer = (state = initState, action) => {
@@ -16,10 +28,11 @@ const rootReducer = (state = initState, action) => {
 
     switch (action.type) {
         case HABBIT_CHECKIN: {
-            console.log('hit habbit check on reducer')
-            state.habbitDailyCount++
+            console.log('hit habbit check on reducer', action.payload)
+            state.habbitArray[action.payload].habbitDailyCount++
             return {
-                ...state
+                ...state,
+                habbitDailyCount: Math.random()
             }
         }
             break;
@@ -56,7 +69,7 @@ const rootReducer = (state = initState, action) => {
             console.log('Add Habbit Hit reducer');
             return {
                 ...state,
-                habbit: state.habbitToAdd,
+                habbitArray: [...state.habbitArray, action.habbitToAdd],
                 appView: 'HabbitView'
             }
         }

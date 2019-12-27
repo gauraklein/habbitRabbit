@@ -42,15 +42,16 @@ const mapStateToProps = (state) => {
        habbitDailyCount: state.habbitDailyCount,
        habbitInput: state.habbitInput,
        habbitToAdd: state.habbitToAdd,
-       appView: state.appView
+       appView: state.appView,
+       habbitArray: state.habbitArray
    }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleHabbitCheckin: () => dispatch(handleHabbitCheckin()),
+        handleHabbitCheckin: (habbitId) => dispatch(handleHabbitCheckin(habbitId)),
         handleTypeHabbit: (habbitValue) => dispatch(handleTypeHabbit(habbitValue)),
-        handleAddHabbit: () => dispatch(handleAddHabbit()),
+        handleAddHabbit: (habbitToAdd, habbitArrayLength) => dispatch(handleAddHabbit(habbitToAdd, habbitArrayLength)),
         handleAddHabbitView: () => dispatch(handleAddHabbitView()),
         handleHabbitView: () => dispatch(handleHabbitView())
     }

@@ -13,10 +13,17 @@ export const handleTypeHabbit = (habbitValue) => {
     }
 };
 
-export const handleAddHabbit = () => {
+export const handleAddHabbit = (habbitToAdd, habbitArrayLength) => {
+    let habbitToAddObject = {
+        habbit: habbitToAdd,
+        habbitDailyCount: 0,
+        habbitId: habbitArrayLength
+    }
+
     return (dispatch)   => {
         dispatch({
-            type: ADD_HABBIT
+            type: ADD_HABBIT,
+            habbitToAdd: habbitToAddObject
         })
     }
 };
