@@ -10,19 +10,22 @@ export const HabbitComponent = (props) => {
 
     return (
         <View style={styles.container}>
-            <ScrollView
-                horizontal={true}>
-                {props.habbitArray.map((singleHabbit) => {
-                    return (
-                        < SingleHabbitScreen
-                            {...singleHabbit}
-                            key={singleHabbit.habbitId.toString()}
-                            handleHabbitCheckin={props.handleHabbitCheckin}
-                            handleAddHabbitView={props.handleAddHabbitView}
-                        />
-                    )
-                })}
-            </ScrollView>
+            <View
+                style={styles.fullContainer}>
+                <ScrollView
+                    horizontal={true}>
+                    {props.habbitArray.map((singleHabbit) => {
+                        return (
+                            < SingleHabbitScreen
+                                {...singleHabbit}
+                                key={singleHabbit.habbitId.toString()}
+                                handleHabbitCheckin={props.handleHabbitCheckin}
+                                handleAddHabbitView={props.handleAddHabbitView}
+                            />
+                        )
+                    })}
+                </ScrollView>
+            </View>
             <View style={styles.navContainer}>
                 <NavBar {...props}/>
             </View>

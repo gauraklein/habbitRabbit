@@ -10,12 +10,12 @@ const initState = {
     appView: "HabbitView",
     habbitArray: [
         {
-            habbit: "Test",
+            habbit: "Habbit 1",
             habbitId: 0,
             habbitDailyCount: 0
         },
         {
-            habbit:"test for second",
+            habbit:"Habbit 2",
             habbitId: 1,
             habbitDailyCount: 0
         }
@@ -69,7 +69,7 @@ const rootReducer = (state = initState, action) => {
             console.log('Add Habbit Hit reducer');
             return {
                 ...state,
-                habbit: state.habbitToAdd,
+                habbitArray: [...state.habbitArray, action.habbitToAdd],
                 appView: 'HabbitView'
             }
         }

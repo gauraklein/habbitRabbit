@@ -51,7 +51,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         handleHabbitCheckin: (habbitId) => dispatch(handleHabbitCheckin(habbitId)),
         handleTypeHabbit: (habbitValue) => dispatch(handleTypeHabbit(habbitValue)),
-        handleAddHabbit: () => dispatch(handleAddHabbit()),
+        handleAddHabbit: (habbitToAdd, habbitArrayLength) => dispatch(handleAddHabbit(habbitToAdd, habbitArrayLength)),
         handleAddHabbitView: () => dispatch(handleAddHabbitView()),
         handleHabbitView: () => dispatch(handleHabbitView())
     }
