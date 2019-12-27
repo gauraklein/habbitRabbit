@@ -31,7 +31,7 @@ const rootReducer = (state = initState, action) => {
                 appView: "AddHabbitView"
             }
         }
-
+            break;
         case TYPE_HABBIT: {
             console.log('Type habbit hit reducer');
             return {
@@ -47,7 +47,7 @@ const rootReducer = (state = initState, action) => {
             return {
                 ...state,
                 habbit: state.habbitToAdd,
-
+                appView: 'HabbitView'
             }
         }
 
