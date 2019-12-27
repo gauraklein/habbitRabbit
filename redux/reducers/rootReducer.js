@@ -1,10 +1,12 @@
 import {HABBIT_CHECKIN} from "../../views/HabbitView/HabbitViewActions";
-
+import { TYPE_HABBIT, ADD_HABBIT} from "../../views/AddHabbitView/AddHabbitActions";
 
 const initState = {
     test: 'testilkjlkng',
-    habbit: 'C0d3',
-    habbitDailyCount: 0
+    habbit: 'habbit goes here',
+    habbitDailyCount: 0,
+    habbitInput: "",
+    habbitToAdd: ""
 };
 
 const rootReducer = (state = initState, action) => {
@@ -20,6 +22,25 @@ const rootReducer = (state = initState, action) => {
             }
         }
             break;
+
+        case TYPE_HABBIT: {
+            console.log('Type habbit hit reducer');
+            return {
+                ...state,
+                habbitToAdd: action.payload
+            }
+        }
+
+            break;
+
+        case ADD_HABBIT: {
+            console.log('Add Habbit Hit reducer');
+            return {
+                ...state,
+                habbit: state.habbitToAdd,
+
+            }
+        }
 
         default:
             console.log('hit reducer no action')
