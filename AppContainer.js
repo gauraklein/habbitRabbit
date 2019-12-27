@@ -10,7 +10,8 @@ import {AddHabbitComponent} from "./views/AddHabbitView/AddHabbitComponent";
 // Functions
 // import { testFunction} from "./redux/actions/testAction";
 import { handleHabbitCheckin } from "./views/HabbitView/HabbitViewActions";
-import {handleAddHabbit} from "./views/AddHabbitView/AddHabbitActions";
+import {handleTypeHabbit, handleAddHabbit} from "./views/AddHabbitView/AddHabbitActions";
+
 
 
 
@@ -28,14 +29,16 @@ const mapStateToProps = (state) => {
    return {
        habbit: state.habbit,
        habbitDailyCount: state.habbitDailyCount,
-       habbitInput: state.habbitInput
+       habbitInput: state.habbitInput,
+       habbitToAdd: state.habbitToAdd
    }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         handleHabbitCheckin: () => dispatch(handleHabbitCheckin()),
-        handleAddHabbit: () => dispatch(handleAddHabbit(habbitValue))
+        handleTypeHabbit: (habbitValue) => dispatch(handleTypeHabbit(habbitValue)),
+        handleAddHabbit: () => dispatch(handleAddHabbit())
     }
 };
 
