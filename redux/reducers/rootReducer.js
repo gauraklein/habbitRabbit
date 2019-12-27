@@ -1,4 +1,4 @@
-import {HABBIT_CHECKIN} from "../../views/HabbitView/HabbitViewActions";
+import {HABBIT_CHECKIN, ADD_HABBIT_VIEW} from "../../views/HabbitView/HabbitViewActions";
 import { TYPE_HABBIT, ADD_HABBIT} from "../../views/AddHabbitView/AddHabbitActions";
 
 const initState = {
@@ -6,7 +6,8 @@ const initState = {
     habbit: 'habbit goes here',
     habbitDailyCount: 0,
     habbitInput: "",
-    habbitToAdd: ""
+    habbitToAdd: "",
+    appView: "HabbitView"
 };
 
 const rootReducer = (state = initState, action) => {
@@ -22,6 +23,14 @@ const rootReducer = (state = initState, action) => {
             }
         }
             break;
+
+        case ADD_HABBIT_VIEW: {
+            console.log('Add habbit view hit reducer')
+            return {
+                ...state,
+                appView: "AddHabbitView"
+            }
+        }
 
         case TYPE_HABBIT: {
             console.log('Type habbit hit reducer');

@@ -23,6 +23,11 @@ export const HabbitComponent = (props) => {
                         title="Checkin with Habbit"
                         onPress={props.handleHabbitCheckin.bind(this)}
                         />
+                    <Button
+                        title="Add New Habbit"
+                        onPress={props.handleAddHabbitView.bind(this)}
+                        />
+
                 </View>
 
                 <View style={styles.container}>
