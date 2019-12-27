@@ -1,12 +1,13 @@
-import {HABBIT_CHECKIN} from "../../views/HabbitView/HabbitViewActions";
-import { TYPE_HABBIT, ADD_HABBIT} from "../../views/AddHabbitView/AddHabbitActions";
+import {HABBIT_CHECKIN, ADD_HABBIT_VIEW} from "../../views/HabbitView/HabbitViewActions";
+import { TYPE_HABBIT, ADD_HABBIT, HABBIT_VIEW} from "../../views/AddHabbitView/AddHabbitActions";
 
 const initState = {
     test: 'testilkjlkng',
     habbit: 'habbit goes here',
     habbitDailyCount: 0,
     habbitInput: "",
-    habbitToAdd: ""
+    habbitToAdd: "",
+    appView: "HabbitView"
 };
 
 const rootReducer = (state = initState, action) => {
@@ -19,6 +20,24 @@ const rootReducer = (state = initState, action) => {
             state.habbitDailyCount++
             return {
                 ...state
+            }
+        }
+            break;
+
+        case ADD_HABBIT_VIEW: {
+            console.log('Add habbit view hit reducer')
+            return {
+                ...state,
+                appView: "AddHabbitView"
+            }
+        }
+            break;
+
+        case HABBIT_VIEW: {
+            console.log('Habbit View hit reducer');
+            return {
+                ...state,
+                appView: "HabbitView"
             }
         }
             break;
@@ -38,7 +57,7 @@ const rootReducer = (state = initState, action) => {
             return {
                 ...state,
                 habbit: state.habbitToAdd,
-
+                appView: 'HabbitView'
             }
         }
 
