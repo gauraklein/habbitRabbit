@@ -8,6 +8,13 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         color: '#ddd'
     },
+    navContainer: {
+        flex: 1
+    },
+    fullContainer: {
+        flex: 9,
+
+    },
     text: {
         color: 'black'
     }
