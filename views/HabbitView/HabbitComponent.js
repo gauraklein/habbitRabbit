@@ -16,6 +16,7 @@ export const HabbitComponent = (props) => {
                     return (
                         < SingleHabbitScreen
                             {...singleHabbit}
+                            key={singleHabbit.habbitId.toString()}
                             handleHabbitCheckin={props.handleHabbitCheckin}
                             handleAddHabbitView={props.handleAddHabbitView}
                         />
@@ -34,7 +35,9 @@ export const HabbitComponent = (props) => {
 
 function SingleHabbitScreen (singleHabbitObject) {
     return (
-        <View style={{flex: 1,
+        <View
+
+              style={{flex: 1,
         width: Dimensions.get('window').width}}>
             <View style={styles.container}>
                 <Text style={styles.text}>RabbitGoesHere</Text>
@@ -50,7 +53,7 @@ function SingleHabbitScreen (singleHabbitObject) {
                     <Text style={styles.text}>{singleHabbitObject.habbitDailyCount}</Text>
                     <Button
                         title="Checkin with Habbit"
-                        onPress={singleHabbitObject.handleHabbitCheckin.bind(this)}
+                        onPress={singleHabbitObject.handleHabbitCheckin.bind(this, singleHabbitObject.habbitId)}
                     />
                     <Button
                         title="Add New Habbit"
