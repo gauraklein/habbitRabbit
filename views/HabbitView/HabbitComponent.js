@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text, View, ScrollView, Dimensions } from 'react-native';
+import { Button, Text, View, ScrollView, Dimensions, Image } from 'react-native';
 import { styles } from './HabbitViewStylesheet'
 import { NavBar} from "../../components/NavBar/NavBar";
 
@@ -43,6 +43,7 @@ function SingleHabbitScreen (singleHabbitObject) {
               style={{flex: 1,
         width: Dimensions.get('window').width}}>
             <View style={styles.container}>
+                <Image source={require('../../assets/Rabbit.png')} />
                 <Text style={styles.text}>RabbitGoesHere</Text>
             </View>
 
