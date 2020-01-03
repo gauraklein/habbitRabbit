@@ -43,8 +43,12 @@ function SingleHabbitScreen (singleHabbitObject) {
               style={{flex: 1,
         width: Dimensions.get('window').width}}>
             <View style={styles.container}>
-                <Image source={require('../../assets/Rabbit.png')} />
-                <Text style={styles.text}>RabbitGoesHere</Text>
+                <View style={styles.image}>
+                    <Image style={{flex: 1,
+        width: Dimensions.get('window').width,
+        marginTop: 40}} source={require('../../assets/RabbitForAnimation.gif')} />
+                    {/* <Text style={styles.text}>RabbitGoesHere</Text> */}
+                </View>    
             </View>
 
             <View style={styles.container}>

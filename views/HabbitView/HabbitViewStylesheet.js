@@ -17,6 +17,12 @@ export const styles = StyleSheet.create({
     },
     text: {
         color: 'black'
+    },
+    image: {
+        flex: 1,
+        width: null,
+        height: null,
+        resizeMode: 'contain'
     }
 
 });
