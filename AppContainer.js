@@ -7,11 +7,13 @@ import {connect} from 'react-redux'
 import { HabbitComponent } from './views/HabbitView/HabbitComponent'
 import {AddHabbitComponent} from "./views/AddHabbitView/AddHabbitComponent";
 import {NavBar} from "./components/NavBar/NavBar";
+import { LoginComponent } from './views/login/LoginComponent'
 
 // Functions
 // import { testFunction} from "./redux/actions/testAction";
 import { handleHabbitCheckin, handleAddHabbitView } from "./views/HabbitView/HabbitViewActions";
 import {handleTypeHabbit, handleAddHabbit, handleHabbitView } from "./views/AddHabbitView/AddHabbitActions";
+
 
 
 
@@ -30,6 +32,12 @@ const AppContainer = (props) => {
         return (
 
                 < HabbitComponent {...props}/>
+
+        )
+    } else if (props.appView === 'LoginView') {
+        return (
+
+            < LoginComponent {...props} />
 
         )
     }
