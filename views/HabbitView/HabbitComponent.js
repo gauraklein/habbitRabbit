@@ -3,6 +3,9 @@ import { Button, Text, View, ScrollView, Dimensions, Image } from 'react-native'
 import { styles } from './HabbitViewStylesheet'
 import { NavBar} from "../../components/NavBar/NavBar";
 
+
+//THIS IS THE COMPONENT
+
 export const HabbitComponent = (props) => {
     console.log(props.habbitArray);
 
@@ -40,7 +43,8 @@ function SingleHabbitScreen (singleHabbitObject) {
     return (
         <View
               style={{flex: 1,
-            width: Dimensions.get('window').width}}>
+            width: Dimensions.get('window').width,
+            backgroundColor: 'white'}}>
                 
                 <View style={styles.rabbitContainer}>
                     <View style={styles.image}>
@@ -52,13 +56,18 @@ function SingleHabbitScreen (singleHabbitObject) {
                 </View>
 
                 <View style={styles.container}>
-                    <Text style={styles.text}>{singleHabbitObject.habbit}</Text>
+                    <Text style={styles.text}>This is the habbit that you are currently building: </Text>
+
+                    <View style={styles.container}>
+                        <Text  style={styles.largeText}>{singleHabbitObject.habbit}</Text>
+                    </View>
+                    
                 </View>
 
                 <View style={styles.container}>
 
                     <View style={styles.container}>
-                        <Text style={styles.text}>{singleHabbitObject.habbitDailyCount}</Text>
+                        <Text style={styles.text}>You have {66 - singleHabbitObject.habbitDailyCount} days of repetition left to build this habit!</Text>
                         <Button
                             title="Checkin with Habbit"
                             onPress={singleHabbitObject.handleHabbitCheckin.bind(this, singleHabbitObject.habbitId)}

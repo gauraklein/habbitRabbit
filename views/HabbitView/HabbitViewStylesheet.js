@@ -2,16 +2,21 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     rabbitContainer: {
-        flex: 4,
+        flex: 3,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: 'white'
     },
     container: {
         flex: 1,
-        backgroundColor: '#ddd',
+        // backgroundColor: '#ddd',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#ddd'
+        color: '#ddd',
+        // borderWidth : 1,
+        // borderColor: '#F44336',  // Set border Hex Color code here. 
+        borderRadius: 10  // Set border Radius.
+       
     },
     navContainer: {
         flex: 1
@@ -22,6 +27,11 @@ export const styles = StyleSheet.create({
     },
     text: {
         color: 'black'
+    },
+    largeText: {
+        color: 'black',
+        fontSize: 25,
+        fontWeight: "bold"
     },
     image: {
         flex: 1,
