@@ -39,37 +39,37 @@ export const HabbitComponent = (props) => {
 function SingleHabbitScreen (singleHabbitObject) {
     return (
         <View
-
               style={{flex: 1,
-        width: Dimensions.get('window').width}}>
-            <View style={styles.container}>
-                <View style={styles.image}>
-                    <Image style={{flex: 1,
-        width: Dimensions.get('window').width,
-        marginTop: 40}} source={require('../../assets/rabbitChilling.gif')} />
-                    {/* <Text style={styles.text}>RabbitGoesHere</Text> */}
-                </View>    
-            </View>
-
-            <View style={styles.container}>
-                <Text style={styles.text}>{singleHabbitObject.habbit}</Text>
-            </View>
-
-            <View style={styles.container}>
+            width: Dimensions.get('window').width}}>
+                
+                <View style={styles.rabbitContainer}>
+                    <View style={styles.image}>
+                        <Image style={{flex: 1,
+                            width: Dimensions.get('window').width,
+                            marginTop: 40}} source={require('../../assets/rabbitChilling.gif')} />
+                            {/* <Text style={styles.text}>RabbitGoesHere</Text> */}
+                    </View>    
+                </View>
 
                 <View style={styles.container}>
-                    <Text style={styles.text}>{singleHabbitObject.habbitDailyCount}</Text>
-                    <Button
-                        title="Checkin with Habbit"
-                        onPress={singleHabbitObject.handleHabbitCheckin.bind(this, singleHabbitObject.habbitId)}
-                    />
-                    <Button
-                        title="Add New Habbit"
-                        onPress={singleHabbitObject.handleAddHabbitView.bind(this)}
-                    />
-
+                    <Text style={styles.text}>{singleHabbitObject.habbit}</Text>
                 </View>
-            </View>
+
+                <View style={styles.container}>
+
+                    <View style={styles.container}>
+                        <Text style={styles.text}>{singleHabbitObject.habbitDailyCount}</Text>
+                        <Button
+                            title="Checkin with Habbit"
+                            onPress={singleHabbitObject.handleHabbitCheckin.bind(this, singleHabbitObject.habbitId)}
+                        />
+                        <Button
+                            title="Add New Habbit"
+                            onPress={singleHabbitObject.handleAddHabbitView.bind(this)}
+                        />
+
+                    </View>
+                </View>
         </View>
     )
 }
