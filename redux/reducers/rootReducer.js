@@ -7,18 +7,9 @@ const initState = {
     habbitDailyCount: 0,
     habbitInput: "",
     habbitToAdd: "",
-    appView: "HabbitView",
+    appView: "AddHabbitView",
     habbitArray: [
-        {
-            habbit: "Habbit 1",
-            habbitId: 0,
-            habbitDailyCount: 0
-        },
-        {
-            habbit:"Habbit 2",
-            habbitId: 1,
-            habbitDailyCount: 0
-        }
+       
     ]
 };
 

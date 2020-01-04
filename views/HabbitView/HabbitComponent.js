@@ -1,7 +1,10 @@
 import React from 'react';
-import { Button, Text, View, ScrollView, Dimensions } from 'react-native';
+import { Button, Text, View, ScrollView, Dimensions, Image } from 'react-native';
 import { styles } from './HabbitViewStylesheet'
 import { NavBar} from "../../components/NavBar/NavBar";
+
+
+//THIS IS THE COMPONENT
 
 export const HabbitComponent = (props) => {
     console.log(props.habbitArray);
@@ -39,32 +42,43 @@ export const HabbitComponent = (props) => {
 function SingleHabbitScreen (singleHabbitObject) {
     return (
         <View
-
               style={{flex: 1,
-        width: Dimensions.get('window').width}}>
-            <View style={styles.container}>
-                <Text style={styles.text}>RabbitGoesHere</Text>
-            </View>
-
-            <View style={styles.container}>
-                <Text style={styles.text}>{singleHabbitObject.habbit}</Text>
-            </View>
-
-            <View style={styles.container}>
+            width: Dimensions.get('window').width,
+            backgroundColor: 'white'}}>
+                
+                <View style={styles.rabbitContainer}>
+                    <View style={styles.image}>
+                        <Image style={{flex: 1,
+                            width: Dimensions.get('window').width,
+                            marginTop: 40}} source={require('../../assets/rabbitChilling.gif')} />
+                            {/* <Text style={styles.text}>RabbitGoesHere</Text> */}
+                    </View>    
+                </View>
 
                 <View style={styles.container}>
-                    <Text style={styles.text}>{singleHabbitObject.habbitDailyCount}</Text>
-                    <Button
-                        title="Checkin with Habbit"
-                        onPress={singleHabbitObject.handleHabbitCheckin.bind(this, singleHabbitObject.habbitId)}
-                    />
-                    <Button
-                        title="Add New Habbit"
-                        onPress={singleHabbitObject.handleAddHabbitView.bind(this)}
-                    />
+                    <Text style={styles.text}>This is the habbit that you are currently building: </Text>
 
+                    <View style={styles.container}>
+                        <Text  style={styles.largeText}>{singleHabbitObject.habbit}</Text>
+                    </View>
+                    
                 </View>
-            </View>
+
+                <View style={styles.container}>
+
+                    <View style={styles.container}>
+                        <Text style={styles.text}>You have {66 - singleHabbitObject.habbitDailyCount} days of repetition left to build this habit!</Text>
+                        <Button
+                            title="Checkin with Habbit"
+                            onPress={singleHabbitObject.handleHabbitCheckin.bind(this, singleHabbitObject.habbitId)}
+                        />
+                        <Button
+                            title="Add New Habbit"
+                            onPress={singleHabbitObject.handleAddHabbitView.bind(this)}
+                        />
+
+                    </View>
+                </View>
         </View>
     )
 }

@@ -4,10 +4,12 @@ export const styles = StyleSheet.create({
     navBar: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: '#ddd',
+        // backgroundColor: '#ddd',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#ddd'
+        color: '#ddd',
+       
+        // overflow: "hidden"
     },
     text: {
         color: 'black'
