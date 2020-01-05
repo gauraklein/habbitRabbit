@@ -39,6 +39,21 @@ export const styles = StyleSheet.create({
         width: null,
         height: null,
         resizeMode: 'contain'
+    },
+     /* Here, style the text of your button */
+     customBtnText: {
+        fontSize: 20,
+        fontWeight: '400',
+        color: "#fff",
+    },
+
+  /* Here, style the background of your button */
+    customBtnBG: {
+        marginTop: 20,
+    backgroundColor: "#007aff",
+    paddingHorizontal: 30,
+    paddingVertical: 5,
+    borderRadius: 30
     }
 
 });

@@ -7,8 +7,8 @@ export const styles = StyleSheet.create({
         backgroundColor: '#EAEAEA',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#ddd',
-        borderWidth: 2
+        color: '#ddd'
+        // borderWidth: 2
        
         // overflow: "hidden"
     },
