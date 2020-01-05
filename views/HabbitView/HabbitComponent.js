@@ -12,7 +12,7 @@ export const HabbitComponent = (props) => {
     // let screenWidth = Dimensions.get('window').width;
 
     return (
-        <View style={styles.container}>
+        <View style={styles.fullContainer}>
             <View
                 style={styles.fullContainer}>
                 <ScrollView
@@ -44,7 +44,7 @@ function SingleHabbitScreen (singleHabbitObject) {
         <View
               style={{flex: 1,
             width: Dimensions.get('window').width,
-            backgroundColor: 'white'}}>
+            backgroundColor: '#f3f3f3'}}>
                 
                 <View style={styles.rabbitContainer}>
                     <View style={styles.image}>
@@ -67,7 +67,7 @@ function SingleHabbitScreen (singleHabbitObject) {
                 <View style={styles.container}>
 
                     <View style={styles.container}>
-                        <Text style={styles.text}>You have {66 - singleHabbitObject.habbitDailyCount} days of repetition left to build this habit!</Text>
+                        <Text style={styles.text}>You have <Text style={styles.largeText}>{66 - singleHabbitObject.habbitDailyCount}</Text> days of repetition left to build this habit!</Text>
                         <Button
                             title="Checkin with Habbit"
                             onPress={singleHabbitObject.handleHabbitCheckin.bind(this, singleHabbitObject.habbitId)}

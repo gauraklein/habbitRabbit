@@ -8,12 +8,13 @@ import { HabbitComponent } from './views/HabbitView/HabbitComponent'
 import {AddHabbitComponent} from "./views/AddHabbitView/AddHabbitComponent";
 import {NavBar} from "./components/NavBar/NavBar";
 import { LoginComponent } from './views/login/LoginComponent'
+import { AllHabbitComponent } from './views/AllHabbitView/AllHabbitComponent'
 
 // Functions
 // import { testFunction} from "./redux/actions/testAction";
 import { handleHabbitCheckin, handleAddHabbitView } from "./views/HabbitView/HabbitViewActions";
 import {handleTypeHabbit, handleAddHabbit, handleHabbitView } from "./views/AddHabbitView/AddHabbitActions";
-
+import { handleAllHabbitView } from './views/AllHabbitView/AllHabbitActions'
 
 
 
@@ -40,6 +41,12 @@ const AppContainer = (props) => {
             < LoginComponent {...props} />
 
         )
+    } else if (props.appView === 'AllHabbitView') {
+        return (
+
+            < AllHabbitComponent {...props} />
+
+        )
     }
 };
 
@@ -61,7 +68,8 @@ const mapDispatchToProps = (dispatch) => {
         handleTypeHabbit: (habbitValue) => dispatch(handleTypeHabbit(habbitValue)),
         handleAddHabbit: (habbitToAdd, habbitArrayLength) => dispatch(handleAddHabbit(habbitToAdd, habbitArrayLength)),
         handleAddHabbitView: () => dispatch(handleAddHabbitView()),
-        handleHabbitView: () => dispatch(handleHabbitView())
+        handleHabbitView: () => dispatch(handleHabbitView()),
+        handleAllHabbitView: () => dispatch(handleAllHabbitView())
     }
 };
 

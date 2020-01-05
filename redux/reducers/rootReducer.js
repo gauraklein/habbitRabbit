@@ -1,5 +1,6 @@
 import {HABBIT_CHECKIN, ADD_HABBIT_VIEW} from "../../views/HabbitView/HabbitViewActions";
 import { TYPE_HABBIT, ADD_HABBIT, HABBIT_VIEW} from "../../views/AddHabbitView/AddHabbitActions";
+import { ALL_HABBIT_VIEW } from '../../views/AllHabbitView/AllHabbitActions'
 
 const initState = {
     test: 'testilkjlkng',
@@ -7,7 +8,7 @@ const initState = {
     habbitDailyCount: 0,
     habbitInput: "",
     habbitToAdd: "",
-    appView: "LoginView",
+    appView: "AllHabbitView",
     habbitArray: [
        
     ]
@@ -45,6 +46,14 @@ const rootReducer = (state = initState, action) => {
             }
         }
             break;
+
+        case ALL_HABBIT_VIEW: {
+            console.log('viewing all habbits from reducer')
+            return {
+                ...state,
+                appView: 'AllHabbitView'
+            }
+        }    
 
         case TYPE_HABBIT: {
             console.log('Type habbit hit reducer');

@@ -1,16 +1,18 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-    navBar: {
-        flex: 1,
-        flexDirection: 'row',
+    container: {
+        flex: 9,
         backgroundColor: '#EAEAEA',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#ddd',
-        borderWidth: 2
-       
-        // overflow: "hidden"
+        color: '#fff'
+    },
+    navContainer: {
+        flex: 1
+    },
+    fullContainer: {
+        flex: 1
     },
     text: {
         color: 'black'

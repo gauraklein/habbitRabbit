@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     rabbitContainer: {
-        flex: 3,
+        flex: 2,
         alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'white'
+        justifyContent: 'center'
+        // backgroundColor: 'white'
     },
     container: {
         flex: 1,
@@ -19,7 +19,8 @@ export const styles = StyleSheet.create({
        
     },
     navContainer: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#EAEAEA'
     },
     fullContainer: {
         flex: 9,
