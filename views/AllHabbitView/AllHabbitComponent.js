@@ -72,13 +72,13 @@ const AllHabbitDisplay = (singleHabbitObject) => {
             backgroundColor: 'green',
             marginBottom: 20,
             padding: 25,
-            borderWidth: 3,
+            // borderWidth: 3,
             borderTopLeftRadius: 10,
             borderBottomLeftRadius: 10
             }}>
                 
                 <View>
-                    <Text style={styles.text}>
+                    <Text style={styles.largeText}>
                         {singleHabbitObject.habbit}
                     </Text>
                 </View>
