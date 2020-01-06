@@ -23,9 +23,10 @@ export const styles = StyleSheet.create({
         fontWeight: "bold"
     },
     rabbitFace: {
-        height: 100,
+        height: 80,
+        width: 60,
         padding: 0,
-        borderWidth: 3,
+        // borderWidth: 3,
     }
 
 });

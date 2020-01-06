@@ -37,7 +37,7 @@ export const AllHabbitComponent = (props) => {
                 <View style={{
                     flex: 9,
                     alignItems: "flex-end",
-                    borderWidth: 3
+                    // borderWidth: 3
                 }}>
                    
                     <ScrollView>
@@ -80,29 +80,29 @@ const AllHabbitDisplay = (singleHabbitObject) => {
             flexDirection: 'row',
             // alignItems: 'center',
             justifyContent: "space-between",
-            borderWidth: 5
+            // borderWidth: 5
         
             }}>
              
                    
-                        <View style={{
-                        borderWidth: 2,
-                        flex: 1
-                        }}>
+                        
                             <Image 
                                 style={styles.rabbitFace}
-                                resizeMode="contain"
+                                resizeMode="center"
                                     source={require('../../assets/happyRabbitFace.gif')} 
                             />
                          
-                        </View>
+                 
                         
-                        <View style={{flex: 2,
-                        
-                        borderWidth: 2
+                        <View style={{flex: 1,
+                            margin: 20
                         }}>
                             <Text style={styles.largeText}>
                                 {singleHabbitObject.habbit}
+                            </Text>
+
+                            <Text style={styles.text}>
+                                {66 - singleHabbitObject.habbitDailyCount} days left
                             </Text>
                         </View> 
                         
