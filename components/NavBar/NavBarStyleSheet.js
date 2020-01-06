@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
     navBar: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: '#EAEAEA',
+        // backgroundColor: '#EAEAEA',
         alignItems: 'center',
         justifyContent: 'center',
         color: '#ddd'

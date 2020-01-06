@@ -1,13 +1,26 @@
 import React from 'react';
-import { TouchableOpacity, Button,TextInput, Text, View } from 'react-native';
+import { Dimensions, TouchableOpacity, Button,TextInput, Text, View } from 'react-native';
 import { styles } from './AddHabbitStylesheet'
 import {NavBar} from "../../components/NavBar/NavBar";
+import { LinearGradient } from 'expo-linear-gradient';
+
 
 export const AddHabbitComponent = (props) => {
     console.log(props);
 
     return(
         <View style={styles.fullContainer}>
+               <LinearGradient
+          colors={['#41b3a3', '#7DC3AF']}
+          style={{
+            // position: 'absolute',
+            left: 0,
+            right: 0,
+            top: 0,
+            height: Dimensions.get('window').height,
+            // borderWidth: 10
+          }}
+        >
             <View style={styles.container}>
                 <Text style={styles.text}>
                     Add A habbit that you would like to form here!
@@ -39,6 +52,7 @@ export const AddHabbitComponent = (props) => {
                 <View style={styles.navContainer}>
                     < NavBar {...props}/>
                 </View>
+            </LinearGradient>        
         </View>
     )
 }

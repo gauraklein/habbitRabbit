@@ -3,6 +3,7 @@ import { Button,TextInput, Text, View, Dimensions, Image } from 'react-native';
 import { styles } from './AllHabbitStylesheet'
 import {NavBar} from "../../components/NavBar/NavBar";
 import { ScrollView } from 'react-native-gesture-handler';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export const AllHabbitComponent = (props) => {
     console.log(props);
@@ -10,9 +11,22 @@ export const AllHabbitComponent = (props) => {
     return(
         <View style={{
             height: Dimensions.get('window').height,
-            width: Dimensions.get('window').width
+            width: Dimensions.get('window').width,
             // borderWidth: 2
         }}>
+
+        <LinearGradient
+          colors={['#41b3a3', '#7DC3AF']}
+          style={{
+            // position: 'absolute',
+            left: 0,
+            right: 0,
+            top: 0,
+            height: Dimensions.get('window').height,
+            // borderWidth: 10
+          }}
+        >
+            
             <View style={styles.notNavContainer}>
 
                 {/* <View style={styles.container}>
@@ -61,6 +75,7 @@ export const AllHabbitComponent = (props) => {
             <View style={styles.navContainer}>
                 < NavBar {...props}/>
             </View>
+            </LinearGradient>
         </View>
     )
 }
@@ -71,7 +86,7 @@ const AllHabbitDisplay = (singleHabbitObject) => {
         <View
               style={{flex: 1,
             width: Dimensions.get('window').width - 50,
-            backgroundColor: 'green',
+            backgroundColor: '#edf5e1',
             marginBottom: 20,
             padding: 25,
             // borderWidth: 3,

@@ -3,10 +3,10 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     notNavContainer: {
         flex: 9,
-        backgroundColor: '#EAEAEA',
+        // backgroundColor: '#7DC3AF',
         // alignItems: 'center',
         // justifyContent: 'center',
-        color: '#fff'
+        // color: '#fff'
     },
     navContainer: {
         flex: 1

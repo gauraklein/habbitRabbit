@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Button, Text, View, ScrollView, Dimensions, Image } from 'react-native';
 import { styles } from './HabbitViewStylesheet'
 import { NavBar} from "../../components/NavBar/NavBar";
-
+import { LinearGradient } from 'expo-linear-gradient';
 
 //THIS IS THE COMPONENT
 
@@ -12,7 +12,22 @@ export const HabbitComponent = (props) => {
     // let screenWidth = Dimensions.get('window').width;
 
     return (
-        <View style={styles.fullContainer}>
+        <View style={{
+            flex: 1,
+            height: Dimensions.get('window').height
+
+        }}>
+            <LinearGradient
+          colors={['#41b3a3', '#7DC3AF']}
+          style={{
+            // position: 'absolute',
+            left: 0,
+            right: 0,
+            top: 0,
+            height: Dimensions.get('window').height,
+            // borderWidth: 10
+          }}
+        >
             <View
                 style={styles.fullContainer}>
                 <ScrollView
@@ -32,7 +47,8 @@ export const HabbitComponent = (props) => {
             <View style={styles.navContainer}>
                 <NavBar {...props}/>
             </View>
-        </View>
+        </LinearGradient>
+    </View>
     )
 };
 
@@ -43,8 +59,8 @@ function SingleHabbitScreen (singleHabbitObject) {
     return (
         <View
               style={{flex: 1,
-            width: Dimensions.get('window').width,
-            backgroundColor: '#EAEAEA'}}>
+            width: Dimensions.get('window').width
+            }}>
                 
                 <View style={styles.rabbitContainer}>
                     <View style={styles.image}>

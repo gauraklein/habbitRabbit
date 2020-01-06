@@ -19,8 +19,8 @@ export const styles = StyleSheet.create({
        
     },
     navContainer: {
-        flex: 1,
-        backgroundColor: '#EAEAEA'
+        flex: 1
+        // backgroundColor: '#EAEAEA'
     },
     fullContainer: {
         flex: 9,
