@@ -3,6 +3,8 @@ import { SectionList, FlatList, TouchableOpacity, Button, Text, View, ScrollView
 import { styles } from './HabbitViewStylesheet'
 import { NavBar} from "../../components/NavBar/NavBar";
 import { LinearGradient } from 'expo-linear-gradient';
+// import Swipeable from 'react-native-gesture-handler/Swipeable'
+import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
 
 //THIS IS THE COMPONENT
@@ -10,14 +12,21 @@ import { LinearGradient } from 'expo-linear-gradient';
 export const HabbitComponent = (props) => {
     console.log(props.habbitArray);
 
-    // let screenWidth = Dimensions.get('window').width;
+    // onSwipeLeft(gestureState) {
+    //     console.log('leftSwipe')
+    // }
 
     return (
+
+     
         <View style={{
             flex: 1,
             height: Dimensions.get('window').height
 
         }}>
+          
+        
+
             <LinearGradient
           colors={['#41b3a3', '#7DC3AF']}
           style={{
@@ -38,28 +47,6 @@ export const HabbitComponent = (props) => {
                     handleAddHabbitView={props.handleAddHabbitView}>
                         <Text>TEST</Text>
                     </SingleHabbitScreen>
-                
-                {/* <ScrollView
-                    horizontal={true}
-                    pagingEnabled={true}
-                    showsHorizontalScrollIndicator={false}
-                    >
-                    {props.habbitArray.map((singleHabbit) => {
-                        return (
-                            < SingleHabbitScreen
-                                {...singleHabbit}
-                                key={singleHabbit.habbitId.toString()}
-                                handleHabbitCheckin={props.handleHabbitCheckin}
-                                handleAddHabbitView={props.handleAddHabbitView}
-                            />
-                        )
-                    })}
-                </ScrollView> */}
-
-                {/* {flatlistForRef(props)} */}
-
-           
-
 
             </View>
 
@@ -68,37 +55,11 @@ export const HabbitComponent = (props) => {
             </View>
         </LinearGradient>
     </View>
+  
     )
 };
 
-// const flatlistForRef = (props) => {
-//     let flatListRef= useRef();
 
-//     return (
-//         <FlatList
-//         // ref={this.flatListRef}
-//         data={props.habbitArray}
-//         horizontal={true}
-//         pagingEnabled
-//         showsHorizontalScrollIndicator={false}
-//         renderItem={({item}) => {
-//             return (
-//                 <SingleHabbitScreen
-//                     {...item}
-//                     handleHabbitCheckin={props.handleHabbitCheckin}
-//                     handleAddHabbitView={props.handleAddHabbitView}
-//                 />
-               
-//             )
-//         }}
-//         keyExtractor={singleHabbit => singleHabbit.habbitId}
-//         >
-        
-
-//         </FlatList>
-//     )
-
-// }
 //RENDERS HABBIT
 
 function SingleHabbitScreen (singleHabbitObject) {
