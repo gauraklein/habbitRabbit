@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button,TextInput, Text, View, Dimensions, Image } from 'react-native';
+import { Button,TextInput, Text, View, Dimensions, Image, TouchableOpacity } from 'react-native';
 import { styles } from './AllHabbitStylesheet'
 import {NavBar} from "../../components/NavBar/NavBar";
 import { ScrollView } from 'react-native-gesture-handler';
@@ -85,53 +85,53 @@ export const AllHabbitComponent = (props) => {
 const AllHabbitDisplay = (singleHabbitObject) => {
     console.log(singleHabbitObject)
     return (
-        <View
-              style={{flex: 1,
-            width: Dimensions.get('window').width - 50,
-            backgroundColor: '#edf5e1',
-            marginBottom: 20,
-            padding: 25,
-            marginLeft: 20,
-            borderTopLeftRadius: 50,
-            borderBottomLeftRadius: 50,
-            flexDirection: 'row',
-            alignItems: 'center',
-            shadowColor: '#000',
-            shadowOffset: { width: -5, height: 5 },
-            shadowOpacity: 0.3,
-            shadowRadius: 3
-            // justifyContent: "space-between",
-            // borderWidth: 5
-        
-            }}>
-             
-                   
-                        
-                            <Image 
-                                style={styles.rabbitFace}
-                                resizeMode="center"
-                                    source={require('../../assets/happyRabbitFace.gif')} 
-                            />
-                         
-                 
-                        
-                        <View style={{flex: 1,
-                            margin: 20
-                        }}>
-                            <Text style={styles.largeText}>
-                                {singleHabbitObject.habbit}
-                            </Text>
-
-                            <Text style={styles.text}>
-                                {66 - singleHabbitObject.habbitDailyCount} days left
-                            </Text>
-                        </View> 
-                        
-                        <View>
-                            
-                        </View>   
+        <TouchableOpacity>
+            <View
+                style={{flex: 1,
+                width: Dimensions.get('window').width - 50,
+                backgroundColor: '#edf5e1',
+                marginBottom: 20,
+                padding: 25,
+                marginLeft: 20,
+                borderTopLeftRadius: 50,
+                borderBottomLeftRadius: 50,
+                flexDirection: 'row',
+                alignItems: 'center',
+                shadowColor: '#000',
+                shadowOffset: { width: -5, height: 5 },
+                shadowOpacity: 0.3,
+                shadowRadius: 3
+                // justifyContent: "space-between",
+                // borderWidth: 5
+            
+                }}>
+                
                     
-           
-        </View>
+                            
+                                <Image 
+                                    style={styles.rabbitFace}
+                                    resizeMode="center"
+                                        source={require('../../assets/happyRabbitFace.gif')} 
+                                />
+                            
+                    
+                            
+                            <View style={{flex: 1,
+                                margin: 20
+                            }}>
+                                <Text style={styles.largeText}>
+                                    {singleHabbitObject.habbit}
+                                </Text>
+
+                                <Text style={styles.text}>
+                                    {66 - singleHabbitObject.habbitDailyCount} days left
+                                </Text>
+                            </View> 
+                            
+                            <View>
+                                
+                            </View>   
+            </View>
+        </TouchableOpacity>
     )
 }
