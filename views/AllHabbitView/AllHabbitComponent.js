@@ -41,6 +41,7 @@ export const AllHabbitComponent = (props) => {
                 }}>
                    
                     <ScrollView>
+                        
                         {props.habbitArray.map((singleHabbitObject) => {
                             return (
                                 < AllHabbitDisplay
@@ -74,35 +75,42 @@ const AllHabbitDisplay = (singleHabbitObject) => {
             marginBottom: 20,
             padding: 25,
             // borderWidth: 3,
-            borderTopLeftRadius: 10,
-            borderBottomLeftRadius: 10,
+            borderTopLeftRadius: 50,
+            borderBottomLeftRadius: 50,
             flexDirection: 'row',
-            alignItems: 'center',
+            // alignItems: 'center',
+            justifyContent: "space-between",
             borderWidth: 5
         
             }}>
-                
-                <View>
-                    <View style={{width: 100,
-                    borderWidth: 2}}>
-                        <Image 
-                            style={styles.rabbitFace}
-                                source={require('../../assets/happyRabbitFace.gif')} 
-                        />
-                    </View>
-                    
-                    <View style={{flex: 1,
-                    width: 100,
-                    borderWidth: 2
-                    }}>
-                        <Text style={styles.largeText}>
-                            {singleHabbitObject.habbit}
-                        </Text>
-                    </View> 
-                    <View>
+             
+                   
+                        <View style={{
+                        borderWidth: 2,
+                        flex: 1
+                        }}>
+                            <Image 
+                                style={styles.rabbitFace}
+                                resizeMode="contain"
+                                    source={require('../../assets/happyRabbitFace.gif')} 
+                            />
+                         
+                        </View>
                         
-                    </View>   
-                </View>
+                        <View style={{flex: 2,
+                        
+                        borderWidth: 2
+                        }}>
+                            <Text style={styles.largeText}>
+                                {singleHabbitObject.habbit}
+                            </Text>
+                        </View> 
+                        
+                        <View>
+                            
+                        </View>   
+                    
+           
         </View>
     )
 }
