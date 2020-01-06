@@ -15,22 +15,29 @@ export const styles = StyleSheet.create({
         flex: 1
     },
     text: {
-        color: 'black'
+        color: 'black',
+        fontSize: 20,
+        textAlign: "center",
+        marginHorizontal: 55
     },
      /* Here, style the text of your button */
      customBtnText: {
         fontSize: 20,
         fontWeight: '400',
-        color: "#fff",
+        color: "black",
     },
 
   /* Here, style the background of your button */
     customBtnBG: {
         marginTop: 40,
-    backgroundColor: "#007aff",
-    paddingHorizontal: 30,
-    paddingVertical: 5,
-    borderRadius: 30
+    backgroundColor: "#edf5e1",
+    paddingHorizontal: 50,
+    paddingVertical: 25,
+    borderRadius: 30,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.3,
+    shadowRadius: 2
     }
 
 });

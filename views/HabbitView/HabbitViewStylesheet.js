@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
         color: '#ddd',
         // borderWidth : 1,
         // borderColor: '#F44336',  // Set border Hex Color code here. 
-        borderRadius: 10  // Set border Radius.
+        // borderRadius: 10  // Set border Radius.
        
     },
     navContainer: {
@@ -27,7 +27,9 @@ export const styles = StyleSheet.create({
 
     },
     text: {
-        color: 'black'
+        color: 'black',
+        textAlign: "center",
+        fontSize: 20
     },
     largeText: {
         color: 'black',
@@ -44,16 +46,20 @@ export const styles = StyleSheet.create({
      customBtnText: {
         fontSize: 20,
         fontWeight: '400',
-        color: "#fff",
+        color: "black",
     },
 
   /* Here, style the background of your button */
     customBtnBG: {
         marginTop: 20,
-    backgroundColor: "#007aff",
-    paddingHorizontal: 30,
-    paddingVertical: 5,
-    borderRadius: 30
+    backgroundColor: "#7DC3AF",
+    paddingHorizontal: 40,
+    paddingVertical: 25,
+    borderRadius: 30,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.3,
+    shadowRadius: 2
     }
 
 });

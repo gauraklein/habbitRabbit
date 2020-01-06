@@ -30,8 +30,12 @@ export const HabbitComponent = (props) => {
         >
             <View
                 style={styles.fullContainer}>
+                
                 <ScrollView
-                    horizontal={true}>
+                    horizontal={true}
+                    pagingEnabled={true}
+                    showsHorizontalScrollIndicator={false}
+                    >
                     {props.habbitArray.map((singleHabbit) => {
                         return (
                             < SingleHabbitScreen
@@ -43,7 +47,9 @@ export const HabbitComponent = (props) => {
                         )
                     })}
                 </ScrollView>
+
             </View>
+
             <View style={styles.navContainer}>
                 <NavBar {...props}/>
             </View>
@@ -72,7 +78,7 @@ function SingleHabbitScreen (singleHabbitObject) {
                 </View>
 
                 <View style={styles.container}>
-                    <Text style={styles.text}>This is the habbit that you are currently building: </Text>
+                    {/* <Text style={styles.text}>This is the habbit that you are currently building: </Text> */}
 
                     <View style={styles.container}>
                         <Text  style={styles.largeText}>{singleHabbitObject.habbit}</Text>
@@ -80,16 +86,45 @@ function SingleHabbitScreen (singleHabbitObject) {
                     
                 </View>
 
-                <View style={styles.container}>
+                <View style={{
+                    flex: 2,
+                    justifyContent: "space-between"
+                }}>
 
-                    <View style={styles.container}>
-                        <Text style={styles.text}>You have <Text style={styles.largeText}>{66 - singleHabbitObject.habbitDailyCount}</Text> days of repetition left to build this habit!</Text>
+                    <View style={{
+                        flex: 1,
+                        textAlign: "center",
+                        alignItems: "center"
+                    }}>
+                        <View style={{
+                            flex: 1,
+                            marginBottom: 10,
+                            width: Dimensions.get('window').width - 50,
+                            borderRadius: 40,
+                            backgroundColor: '#edf5e1',
+                            alignItems: "center",
+                            justifyContent: "center",
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 5 },
+                            shadowOpacity: 0.3,
+                            shadowRadius: 2 
+                        }}>
+                            
+                            <Text style={styles.largeText}>{66 - singleHabbitObject.habbitDailyCount}</Text> 
+                            <Text style={styles.text}>
+                        {"\n"} more days 
+                        {"\n"}to create this habit!</Text>
+
                         <TouchableOpacity
                             style={styles.customBtnBG}
                             onPress={singleHabbitObject.handleHabbitCheckin.bind(this, singleHabbitObject.habbitId)}
                         >
                             <Text style={styles.customBtnText}>Checkin with Habbit</Text>
                         </TouchableOpacity>
+
+                        </View>
+                        
+                        
                        
                     </View>
                 </View>

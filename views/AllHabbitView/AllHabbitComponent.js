@@ -80,6 +80,8 @@ export const AllHabbitComponent = (props) => {
     )
 }
 
+/// SHOWS THE HABBIT TAB THING
+
 const AllHabbitDisplay = (singleHabbitObject) => {
     console.log(singleHabbitObject)
     return (
@@ -89,12 +91,16 @@ const AllHabbitDisplay = (singleHabbitObject) => {
             backgroundColor: '#edf5e1',
             marginBottom: 20,
             padding: 25,
-            // borderWidth: 3,
+            marginLeft: 20,
             borderTopLeftRadius: 50,
             borderBottomLeftRadius: 50,
             flexDirection: 'row',
-            // alignItems: 'center',
-            justifyContent: "space-between",
+            alignItems: 'center',
+            shadowColor: '#000',
+            shadowOffset: { width: -5, height: 5 },
+            shadowOpacity: 0.3,
+            shadowRadius: 3
+            // justifyContent: "space-between",
             // borderWidth: 5
         
             }}>

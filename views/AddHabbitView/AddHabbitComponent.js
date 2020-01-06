@@ -23,14 +23,26 @@ export const AddHabbitComponent = (props) => {
         >
             <View style={styles.container}>
                 <Text style={styles.text}>
-                    Add A habbit that you would like to form here!
+                    Studies show that a habbit takes approximately 66 days to become permanent.
+                    {"\n"} 
+                    {"\n"} 
+                    Habbit Rabbit was created to help you keep track of those days.
+
                 </Text>
                 <TextInput
                     style={{
-                        marginTop: 40
+                        marginTop: 40,
+                        width: Dimensions.get('window').width - 100,
+                        borderBottomWidth: 3,
+                        textAlign: "center",
+                        fontSize: 15,
+                        shadowColor: '#000',
+                        shadowOffset: { width: 0, height: 5 },
+                        shadowOpacity: 0.3,
+                        shadowRadius: 2
                     }}
                     label='Habbit'
-                    placeholder="habbit"
+                    placeholder="What habbit would you like to create?"
                     // value={""}
                     onChangeText={props.handleTypeHabbit.bind(this)}
                     />
