@@ -59,7 +59,7 @@ const mapStateToProps = (state) => {
        habbitToAdd: state.habbitToAdd,
        appView: state.appView,
        habbitArray: state.habbitArray,
-       habbitToDisplay: state.habbitToDisplay
+       habbitToDisplayIndex: state.habbitToDisplayIndex
    }
 };
 
