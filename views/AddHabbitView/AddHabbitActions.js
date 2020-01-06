@@ -28,10 +28,12 @@ export const handleAddHabbit = (habbitToAdd, habbitArrayLength) => {
     }
 };
 
-export const handleHabbitView = () => {
+export const handleHabbitView = (habbitId) => {
+    console.log(habbitId, 'this is the habbitID for switching views')
     return (dispatch) => {
         dispatch({
-            type: HABBIT_VIEW
+            type: HABBIT_VIEW,
+            payload: habbitId
         })
     }
 }
