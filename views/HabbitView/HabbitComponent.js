@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Button, Text, View, ScrollView, Dimensions, Image } from 'react-native';
+import { FlatList, TouchableOpacity, Button, Text, View, ScrollView, Dimensions, Image } from 'react-native';
 import { styles } from './HabbitViewStylesheet'
 import { NavBar} from "../../components/NavBar/NavBar";
 import { LinearGradient } from 'expo-linear-gradient';
@@ -31,7 +31,7 @@ export const HabbitComponent = (props) => {
             <View
                 style={styles.fullContainer}>
                 
-                <ScrollView
+                {/* <ScrollView
                     horizontal={true}
                     pagingEnabled={true}
                     showsHorizontalScrollIndicator={false}
@@ -46,7 +46,28 @@ export const HabbitComponent = (props) => {
                             />
                         )
                     })}
-                </ScrollView>
+                </ScrollView> */}
+
+                <FlatList
+                data={props.habbitArray}
+                horizontal={true}
+                pagingEnabled
+                showsHorizontalScrollIndicator={false}
+                renderItem={({item}) => {
+                    return (
+                        <SingleHabbitScreen
+                            {...item}
+                            handleHabbitCheckin={props.handleHabbitCheckin}
+                            handleAddHabbitView={props.handleAddHabbitView}
+                        />
+                       
+                    )
+                }}
+                keyExtractor={singleHabbit => singleHabbit.habbitId}
+                >
+                {console.log(props.habbitArray, 'from flatlist')}
+
+                </FlatList>
 
             </View>
 
