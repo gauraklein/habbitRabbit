@@ -76,7 +76,7 @@ const rootReducer = (state = initState, action) => {
             return {
                 ...state,
                 habbitArray: [...state.habbitArray, action.habbitToAdd],
-                appView: 'HabbitView'
+                appView: 'AllHabbitView'
             }
         }
 
