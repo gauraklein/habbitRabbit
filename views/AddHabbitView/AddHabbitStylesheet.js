@@ -18,7 +18,8 @@ export const styles = StyleSheet.create({
         color: 'black',
         fontSize: 20,
         textAlign: "center",
-        marginHorizontal: 55
+        marginHorizontal: 55,
+        padding: 5
     },
      /* Here, style the text of your button */
      customBtnText: {

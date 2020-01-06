@@ -35,14 +35,15 @@ export const AddHabbitComponent = (props) => {
                         width: Dimensions.get('window').width - 100,
                         borderBottomWidth: 3,
                         textAlign: "center",
-                        fontSize: 15,
+                        fontSize: 20,
                         shadowColor: '#000',
                         shadowOffset: { width: 0, height: 5 },
                         shadowOpacity: 0.3,
-                        shadowRadius: 2
+                        shadowRadius: 2,
+                        // padding: 4
                     }}
                     label='Habbit'
-                    placeholder="What habbit would you like to create?"
+                    placeholder="Write your habbit here!"
                     // value={""}
                     onChangeText={props.handleTypeHabbit.bind(this)}
                     />
