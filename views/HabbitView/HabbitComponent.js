@@ -32,14 +32,14 @@ export const HabbitComponent = (props) => {
             <View
                 style={styles.fullContainer}>
 
-                    {/* <SingleHabbitScreen 
-                    {...props.habbitToDisplay}
+                    <SingleHabbitScreen 
+                    {...props.habbitArray[props.habbitToDisplayIndex]}
                     handleHabbitCheckin={props.handleHabbitCheckin}
                     handleAddHabbitView={props.handleAddHabbitView}>
                         <Text>TEST</Text>
-                    </SingleHabbitScreen> */}
+                    </SingleHabbitScreen>
                 
-                <ScrollView
+                {/* <ScrollView
                     horizontal={true}
                     pagingEnabled={true}
                     showsHorizontalScrollIndicator={false}
@@ -54,7 +54,7 @@ export const HabbitComponent = (props) => {
                             />
                         )
                     })}
-                </ScrollView>
+                </ScrollView> */}
 
                 {/* {flatlistForRef(props)} */}
 

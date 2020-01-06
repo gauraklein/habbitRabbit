@@ -12,9 +12,7 @@ const initState = {
     habbitArray: [
        
     ],
-    habbitToDisplay: {
-
-    }
+    habbitToDisplayIndex: 0
 };
 
 const rootReducer = (state = initState, action) => {
@@ -48,7 +46,7 @@ const rootReducer = (state = initState, action) => {
             return {
                 ...state,
                 appView: "HabbitView",
-                habbitToDisplay: {...state.habbitArray[action.payload]}
+                habbitToDisplayIndex: action.payload
             }
         }
             break;
