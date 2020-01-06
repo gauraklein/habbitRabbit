@@ -60,6 +60,7 @@ export const AllHabbitComponent = (props) => {
                             return (
                                 < AllHabbitDisplay
                                     {...singleHabbitObject}
+                                    handleHabbitView={props.handleHabbitView}
                                     key={singleHabbitObject.habbitId.toString()}
                                     />
                             )
@@ -85,7 +86,9 @@ export const AllHabbitComponent = (props) => {
 const AllHabbitDisplay = (singleHabbitObject) => {
     console.log(singleHabbitObject)
     return (
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress={singleHabbitObject.handleHabbitView.bind(this, singleHabbitObject.habbitId)}
+        >
             <View
                 style={{flex: 1,
                 width: Dimensions.get('window').width - 50,

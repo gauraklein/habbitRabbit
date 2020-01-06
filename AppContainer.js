@@ -32,7 +32,7 @@ const AppContainer = (props) => {
 
         return (
 
-                < HabbitComponent {...props}/>
+            < HabbitComponent {...props}/>
 
         )
     } else if (props.appView === 'LoginView') {
@@ -58,7 +58,8 @@ const mapStateToProps = (state) => {
        habbitInput: state.habbitInput,
        habbitToAdd: state.habbitToAdd,
        appView: state.appView,
-       habbitArray: state.habbitArray
+       habbitArray: state.habbitArray,
+       habbitToDisplay: state.habbitToDisplay
    }
 };
 
@@ -68,7 +69,7 @@ const mapDispatchToProps = (dispatch) => {
         handleTypeHabbit: (habbitValue) => dispatch(handleTypeHabbit(habbitValue)),
         handleAddHabbit: (habbitToAdd, habbitArrayLength) => dispatch(handleAddHabbit(habbitToAdd, habbitArrayLength)),
         handleAddHabbitView: () => dispatch(handleAddHabbitView()),
-        handleHabbitView: () => dispatch(handleHabbitView()),
+        handleHabbitView: (habbitId) => dispatch(handleHabbitView(habbitId)),
         handleAllHabbitView: () => dispatch(handleAllHabbitView())
     }
 };

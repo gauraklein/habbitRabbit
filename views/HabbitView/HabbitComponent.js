@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import { FlatList, TouchableOpacity, Button, Text, View, ScrollView, Dimensions, Image } from 'react-native';
+import { SectionList, FlatList, TouchableOpacity, Button, Text, View, ScrollView, Dimensions, Image } from 'react-native';
 import { styles } from './HabbitViewStylesheet'
 import { NavBar} from "../../components/NavBar/NavBar";
 import { LinearGradient } from 'expo-linear-gradient';
@@ -31,8 +31,15 @@ export const HabbitComponent = (props) => {
         >
             <View
                 style={styles.fullContainer}>
+
+                    {/* <SingleHabbitScreen 
+                    {...props.habbitToDisplay}
+                    handleHabbitCheckin={props.handleHabbitCheckin}
+                    handleAddHabbitView={props.handleAddHabbitView}>
+                        <Text>TEST</Text>
+                    </SingleHabbitScreen> */}
                 
-                {/* <ScrollView
+                <ScrollView
                     horizontal={true}
                     pagingEnabled={true}
                     showsHorizontalScrollIndicator={false}
@@ -47,29 +54,12 @@ export const HabbitComponent = (props) => {
                             />
                         )
                     })}
-                </ScrollView> */}
+                </ScrollView>
 
-                <FlatList
-                // ref={this.flatListRef}
-                data={props.habbitArray}
-                horizontal={true}
-                pagingEnabled
-                showsHorizontalScrollIndicator={false}
-                renderItem={({item}) => {
-                    return (
-                        <SingleHabbitScreen
-                            {...item}
-                            handleHabbitCheckin={props.handleHabbitCheckin}
-                            handleAddHabbitView={props.handleAddHabbitView}
-                        />
-                       
-                    )
-                }}
-                keyExtractor={singleHabbit => singleHabbit.habbitId}
-                >
-                
+                {/* {flatlistForRef(props)} */}
 
-                </FlatList>
+           
+
 
             </View>
 
@@ -81,12 +71,38 @@ export const HabbitComponent = (props) => {
     )
 };
 
-const scrollButton = () => {
-    return 
-}
+// const flatlistForRef = (props) => {
+//     let flatListRef= useRef();
+
+//     return (
+//         <FlatList
+//         // ref={this.flatListRef}
+//         data={props.habbitArray}
+//         horizontal={true}
+//         pagingEnabled
+//         showsHorizontalScrollIndicator={false}
+//         renderItem={({item}) => {
+//             return (
+//                 <SingleHabbitScreen
+//                     {...item}
+//                     handleHabbitCheckin={props.handleHabbitCheckin}
+//                     handleAddHabbitView={props.handleAddHabbitView}
+//                 />
+               
+//             )
+//         }}
+//         keyExtractor={singleHabbit => singleHabbit.habbitId}
+//         >
+        
+
+//         </FlatList>
+//     )
+
+// }
 //RENDERS HABBIT
 
 function SingleHabbitScreen (singleHabbitObject) {
+    console.log(singleHabbitObject, 'this is the single habbit object')
     return (
         <View
               style={{flex: 1,

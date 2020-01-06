@@ -11,7 +11,10 @@ const initState = {
     appView: "AllHabbitView",
     habbitArray: [
        
-    ]
+    ],
+    habbitToDisplay: {
+
+    }
 };
 
 const rootReducer = (state = initState, action) => {
@@ -25,6 +28,8 @@ const rootReducer = (state = initState, action) => {
             return {
                 ...state,
                 habbitDailyCount: Math.random()
+                
+
             }
         }
             break;
@@ -42,7 +47,8 @@ const rootReducer = (state = initState, action) => {
             console.log('Habbit View hit reducer');
             return {
                 ...state,
-                appView: "HabbitView"
+                appView: "HabbitView",
+                habbitToDisplay: {...state.habbitArray[action.payload]}
             }
         }
             break;
