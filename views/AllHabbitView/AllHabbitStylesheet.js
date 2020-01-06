@@ -21,6 +21,9 @@ export const styles = StyleSheet.create({
         color: 'black',
         fontSize: 25,
         fontWeight: "bold"
+    },
+    rabbitFace: {
+        borderWidth: 3
     }
 
 });

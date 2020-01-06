@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button,TextInput, Text, View, Dimensions } from 'react-native';
+import { Button,TextInput, Text, View, Dimensions, Image } from 'react-native';
 import { styles } from './AllHabbitStylesheet'
 import {NavBar} from "../../components/NavBar/NavBar";
 import { ScrollView } from 'react-native-gesture-handler';
@@ -10,8 +10,8 @@ export const AllHabbitComponent = (props) => {
     return(
         <View style={{
             height: Dimensions.get('window').height,
-            width: Dimensions.get('window').width,
-            borderWidth: 2
+            width: Dimensions.get('window').width
+            // borderWidth: 2
         }}>
             <View style={styles.notNavContainer}>
 
@@ -45,6 +45,7 @@ export const AllHabbitComponent = (props) => {
                             return (
                                 < AllHabbitDisplay
                                     {...singleHabbitObject}
+                                    key={singleHabbitObject.habbitId.toString()}
                                     />
                             )
                         })}
@@ -74,13 +75,33 @@ const AllHabbitDisplay = (singleHabbitObject) => {
             padding: 25,
             // borderWidth: 3,
             borderTopLeftRadius: 10,
-            borderBottomLeftRadius: 10
+            borderBottomLeftRadius: 10,
+            flexDirection: 'row',
+            alignItems: 'center',
+            borderWidth: 5
+        
             }}>
                 
                 <View>
-                    <Text style={styles.largeText}>
-                        {singleHabbitObject.habbit}
-                    </Text>
+                    <View style={{width: 100,
+                    borderWidth: 2}}>
+                        <Image 
+                            style={styles.rabbitFace}
+                                source={require('../../assets/happyRabbitFace.gif')} 
+                        />
+                    </View>
+                    
+                    <View style={{flex: 1,
+                    width: 100,
+                    borderWidth: 2
+                    }}>
+                        <Text style={styles.largeText}>
+                            {singleHabbitObject.habbit}
+                        </Text>
+                    </View> 
+                    <View>
+                        
+                    </View>   
                 </View>
         </View>
     )
