@@ -114,12 +114,12 @@ const AllHabbitDisplay = (singleHabbitObject) => {
                                 <Image 
                                     style={styles.rabbitFace}
                                     resizeMode="center"
-                                        source={require('../../assets/happyRabbitFace.gif')} 
+                                        source={require('../../assets/RabbitFaceForIntro.gif')} 
                                 />
                             
                     
                             
-                            <View style={{flex: 1,
+                            <View style={{flex: 4,
                                 margin: 20
                             }}>
                                 <Text style={styles.largeText}>
