@@ -1,6 +1,6 @@
 import {HABBIT_CHECKIN, ADD_HABBIT_VIEW, UNHAPPY_RABBIT} from "../../views/HabbitView/HabbitViewActions";
 import { TYPE_HABBIT, ADD_HABBIT, HABBIT_VIEW} from "../../views/AddHabbitView/AddHabbitActions";
-import { ALL_HABBIT_VIEW } from '../../views/AllHabbitView/AllHabbitActions'
+import { ALL_HABBIT_VIEW, GET_HABBITS_FROM_API} from '../../views/AllHabbitView/AllHabbitActions'
 
 const initState = {
     test: 'testilkjlkng',
@@ -10,7 +10,18 @@ const initState = {
     habbitToAdd: "",
     appView: "LoginView",
     habbitArray: [
-       
+        {
+            "habbit": "Learn React Native",
+            "habbitDailyCount": 32,
+            "habbitId": 0,
+            "isRabbitHappy": false
+          },
+          {
+            "habbit": "Meditate",
+            "habbitDailyCount": 44,
+            "habbitId": 1,
+            "isRabbitHappy": false
+          }
     ],
     habbitToDisplayIndex: 0,
    
@@ -67,6 +78,7 @@ export const rootReducer = (state = initState, action) => {
             return {
                 ...state,
                 appView: 'AllHabbitView'
+                // appView: 'AllHabbitsAsync'
             }
         }    
 
@@ -86,6 +98,16 @@ export const rootReducer = (state = initState, action) => {
                 ...state,
                 habbitArray: [...state.habbitArray, action.habbitToAdd],
                 appView: 'AllHabbitView'
+            }
+        }
+
+            break;
+
+        case GET_HABBITS_FROM_API: {
+            console.log('getting habbits from api')
+            return {
+                ...state,
+                habbitArray: action.payload
             }
         }
 
