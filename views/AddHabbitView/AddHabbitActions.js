@@ -17,7 +17,8 @@ export const handleAddHabbit = (habbitToAdd, habbitArrayLength) => {
     let habbitToAddObject = {
         habbit: habbitToAdd,
         habbitDailyCount: 0,
-        habbitId: habbitArrayLength
+        habbitId: habbitArrayLength,
+        isRabbitHappy: false
     }
 
     return (dispatch)   => {
