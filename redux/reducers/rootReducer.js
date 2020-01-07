@@ -1,5 +1,5 @@
 import {HABBIT_CHECKIN, ADD_HABBIT_VIEW, UNHAPPY_RABBIT} from "../../views/HabbitView/HabbitViewActions";
-import { TYPE_HABBIT, ADD_HABBIT, HABBIT_VIEW} from "../../views/AddHabbitView/AddHabbitActions";
+import { TYPE_HABBIT, ADD_HABBIT, HABBIT_VIEW, HABBIT_TOO_SHORT, HABBIT_SHORTNESS_ACKNOWLEDGED} from "../../views/AddHabbitView/AddHabbitActions";
 import { ALL_HABBIT_VIEW } from '../../views/AllHabbitView/AllHabbitActions'
 
 const initState = {
@@ -13,6 +13,7 @@ const initState = {
        
     ],
     habbitToDisplayIndex: 0,
+    habbitToShort: false
    
 };
 
@@ -70,6 +71,8 @@ const rootReducer = (state = initState, action) => {
             }
         }    
 
+            break; 
+
         case TYPE_HABBIT: {
             console.log('Type habbit hit reducer');
             return {
@@ -86,6 +89,26 @@ const rootReducer = (state = initState, action) => {
                 ...state,
                 habbitArray: [...state.habbitArray, action.habbitToAdd],
                 appView: 'AllHabbitView'
+            }
+        }
+
+            break;
+
+        case HABBIT_TOO_SHORT: {
+            console.log('habbit too short at reducer');
+            return {
+                ...state,
+                habbitTooShort: true
+            }
+        }    
+
+            break;
+
+        case HABBIT_SHORTNESS_ACKNOWLEDGED: {
+            console.log('shortness acknowledged at reducer')
+            return {
+                ...state,
+                habbitTooShort: false
             }
         }
 

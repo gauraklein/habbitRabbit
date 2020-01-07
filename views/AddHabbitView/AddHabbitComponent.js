@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, TouchableOpacity, Button,TextInput, Text, View } from 'react-native';
+import { Dimensions, TouchableOpacity, Button,TextInput, Text, View, Alert } from 'react-native';
 import { styles } from './AddHabbitStylesheet'
 import {NavBar} from "../../components/NavBar/NavBar";
 import { LinearGradient } from 'expo-linear-gradient';
@@ -7,7 +7,15 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 export const AddHabbitComponent = (props) => {
     console.log(props);
-
+    if (props.habbitTooShort) {
+        Alert.alert(
+            'Error',
+            "Your Habbit must be at least 3 characters!",
+            [
+                {text: 'OK', onPress: props.habbitTooShortAknowledgement.bind(this)}
+            ]
+        )
+    }
     return(
         <View style={styles.fullContainer}>
                <LinearGradient
@@ -44,7 +52,7 @@ export const AddHabbitComponent = (props) => {
                     }}
                     label='Habbit'
                     placeholder="Write your habbit here!"
-                    // value={""}
+                    // value={this.state.value}
                     onChangeText={props.handleTypeHabbit.bind(this)}
                     />
             {/* </View>     */}
