@@ -25,7 +25,7 @@ a Facebook Oauth is used as the method for authentication. Users are redirected 
 | /user-habits       | A query is run to the database using the unique id from facebook, then returns all of the habits for that user                              |
 | /add-new-habit     | A query is used to insert a users habit into the database.                                                                                  |
 
-# Routes Used For Testing
+## Routes Used For Testing
 | endpoints                        | Returns                                                                                                                     |
 |---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | /users             | Returns all users in the database|
