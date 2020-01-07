@@ -10,10 +10,11 @@
   "dependencies": {
     "expo": "~36.0.0",
     "expo-linear-gradient": "~8.0.0",
+    "expo-web-browser": "^8.0.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-    "react-native-fbsdk": "^1.1.1",
+    "react-native-fbsdk": "1.1.1",
     "react-native-gesture-handler": "^1.5.3",
     "react-native-link": "^4.1.0",
     "react-native-swipe-gestures": "^1.0.4",
