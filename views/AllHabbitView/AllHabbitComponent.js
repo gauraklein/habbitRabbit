@@ -85,6 +85,8 @@ export const AllHabbitComponent = (props) => {
 
 const AllHabbitDisplay = (singleHabbitObject) => {
     console.log(singleHabbitObject)
+
+    if (!singleHabbitObject.completed) {
     return (
         <TouchableOpacity
         onPress={singleHabbitObject.handleHabbitView.bind(this, singleHabbitObject.habbitId)}
@@ -114,13 +116,14 @@ const AllHabbitDisplay = (singleHabbitObject) => {
                                 <Image 
                                     style={styles.rabbitFace}
                                     resizeMode="center"
-                                        source={require('../../assets/RabbitFaceForIntro.gif')} 
+                                        source={require('../../assets/happyRabbitFace.gif')} 
                                 />
                             
                     
                             
                             <View style={{flex: 4,
-                                margin: 20
+                                margin: 20,
+                                // alignItems: "flex-start"
                             }}>
                                 <Text style={styles.largeText}>
                                     {singleHabbitObject.habbit}
@@ -129,6 +132,8 @@ const AllHabbitDisplay = (singleHabbitObject) => {
                                 <Text style={styles.text}>
                                     {66 - singleHabbitObject.habbitDailyCount} days left
                                 </Text>
+
+
                             </View> 
                             
                             <View style={{flex: 1}}>
@@ -138,6 +143,64 @@ const AllHabbitDisplay = (singleHabbitObject) => {
                                     source={require('../../assets/Arrow.png')} />
                             </View>   
             </View>
-        </TouchableOpacity>
-    )
+        </TouchableOpacity>)
+    } else {
+        return (
+            <TouchableOpacity
+            onPress={singleHabbitObject.handleHabbitView.bind(this, singleHabbitObject.habbitId)}
+            >
+                <View
+                    style={{flex: 1,
+                    width: Dimensions.get('window').width - 50,
+                    backgroundColor: '#edf5e1',
+                    marginBottom: 20,
+                    padding: 25,
+                    marginLeft: 20,
+                    borderTopLeftRadius: 50,
+                    borderBottomLeftRadius: 50,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    shadowColor: '#000',
+                    shadowOffset: { width: -5, height: 5 },
+                    shadowOpacity: 0.3,
+                    shadowRadius: 3
+                    // justifyContent: "space-between",
+                    // borderWidth: 5
+                
+                    }}>
+                    
+                        
+                                
+                                    <Image 
+                                        style={styles.rabbitFace}
+                                        resizeMode="contain"
+                                            source={require('../../assets/rabbitSleeping.gif')} 
+                                    />
+                                
+                        
+                                
+                                <View style={{flex: 4,
+                                    margin: 20,
+                                    // alignItems: "flex-start"
+                                }}>
+                                    <Text style={styles.largeText}>
+                                        {singleHabbitObject.habbit}
+                                    </Text>
+    
+                                    <Text style={styles.text}>
+                                        Completed!
+                                    </Text>
+    
+    
+                                </View> 
+                                
+                                <View style={{flex: 1}}>
+                                    <Image
+                                    style={styles.arrow}
+                                    resizeMode="contain"
+                                        source={require('../../assets/Arrow.png')} />
+                                </View>   
+                </View>
+            </TouchableOpacity>)
+    }
 }

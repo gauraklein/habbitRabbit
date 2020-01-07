@@ -11,16 +11,18 @@ const initState = {
     appView: "LoginView",
     habbitArray: [
         {
-            "habbit": "Learn React Native",
-            "habbitDailyCount": 32,
+            "habbit": "Code Daily",
+            "habbitDailyCount": 65,
             "habbitId": 0,
-            "isRabbitHappy": false
+            "isRabbitHappy": false,
+            "completed": false
           },
           {
-            "habbit": "Meditate",
+            "habbit": "Learn React Native",
             "habbitDailyCount": 44,
             "habbitId": 1,
-            "isRabbitHappy": false
+            "isRabbitHappy": false,
+            "completed": false
           }
     ],
     habbitToDisplayIndex: 0,
@@ -33,16 +35,6 @@ export const rootReducer = (state = initState, action) => {
     console.log(action.type, '----- action type')
 
     switch (action.type) {
-        case HABBIT_CHECKIN: {
-            console.log('hit habbit check on reducer', action.payload)
-            state.habbitArray[action.payload].habbitDailyCount++
-            state.habbitArray[action.payload].isRabbitHappy = true
-            return {
-                ...state,
-                habbitDailyCount: Math.random(),
-            }
-        }
-            break;
 
         case UNHAPPY_RABBIT: {
             console.log('making rabbit unhappy on reducer')
@@ -94,6 +86,21 @@ export const rootReducer = (state = initState, action) => {
         }
 
             break;
+
+        case HABBIT_CHECKIN: {
+            console.log('hit habbit check on reducer', action.payload)
+            let habbitInFocus = state.habbitArray[action.payload]
+            habbitInFocus.habbitDailyCount++
+            habbitInFocus.isRabbitHappy = true
+            if (habbitInFocus.habbitDailyCount === 66) {
+                habbitInFocus.completed = true
+            }
+            return {
+                ...state,
+                habbitDailyCount: Math.random(),
+            }
+        }
+            break;    
 
         case ADD_HABBIT: {
             console.log('Add Habbit Hit reducer');

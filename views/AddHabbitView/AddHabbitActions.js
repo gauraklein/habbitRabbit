@@ -21,7 +21,8 @@ export const handleAddHabbit = (habbitToAdd, habbitArrayLength) => {
         habbit: habbitToAdd,
         habbitDailyCount: 0,
         habbitId: habbitArrayLength,
-        isRabbitHappy: false
+        isRabbitHappy: false,
+        completed: false
     }
 
     if (habbitToAddObject.habbit.length < 3) {

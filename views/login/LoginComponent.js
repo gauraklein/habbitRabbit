@@ -95,7 +95,9 @@ export default class Login extends React.Component {
   if (this.state.authResult.type && this.state.authResult.type === 'success') {
       console.log(this.state.authResult, "auth result")
         return (
-          <View >
+          <View style={{
+            flex: 1
+          }}>
             <TouchableOpacity
               style={styles.customBtnBG}
             onPress={this.props.handleAddHabbitView.bind(this)}>
@@ -119,7 +121,7 @@ export default class Login extends React.Component {
         return (
           <View style={{
             flex: 1,
-
+            marginTop: 25
           }}>
             <TouchableOpacity
               style={styles.customBtnBG}

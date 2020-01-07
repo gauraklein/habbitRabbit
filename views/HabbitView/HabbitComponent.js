@@ -70,6 +70,8 @@ function SingleHabbitScreen (singleHabbitObject) {
        rabbitSource = require('../../assets/rabbitHeartsLoop.gif')
        singleHabbitObject.makeRabbitUnhappy(singleHabbitObject.habbitId)
     } 
+    if (singleHabbitObject.completed === false) {
+
     return (
         <View
               style={{flex: 1,
@@ -136,7 +138,78 @@ function SingleHabbitScreen (singleHabbitObject) {
                        
                     </View>
                 </View>
-        </View>
-    )
+        </View>)
+    } else {
+        return (
+            <View
+                  style={{flex: 1,
+                width: Dimensions.get('window').width
+                }}>
+                    
+                    <View style={styles.rabbitContainer}>
+                        <View style={styles.image}>
+                            <Image style={{flex: 1,
+                                width: Dimensions.get('window').width,
+                                marginTop: 40}} source={require('../../assets/rabbitHeartsLoop.gif')} />
+                                {/* <Text style={styles.text}>RabbitGoesHere</Text> */}
+                        </View>    
+                    </View>
+    
+                    <View style={styles.container}>
+                        {/* <Text style={styles.text}>This is the habbit that you are currently building: </Text> */}
+    
+                        <View style={styles.container}>
+                            <Text  style={styles.largeText}>{singleHabbitObject.habbit}</Text>
+                        </View>
+                        
+                    </View>
+    
+                    <View style={{
+                        flex: 2,
+                        justifyContent: "space-between"
+                    }}>
+    
+                        <View style={{
+                            flex: 1,
+                            textAlign: "center",
+                            alignItems: "center"
+                        }}>
+                            <View style={{
+                                flex: 1,
+                                marginBottom: 10,
+                                width: Dimensions.get('window').width - 50,
+                                borderRadius: 40,
+                                backgroundColor: '#edf5e1',
+                                alignItems: "center",
+                                justifyContent: "center",
+                                shadowColor: '#000',
+                                shadowOffset: { width: 0, height: 5 },
+                                shadowOpacity: 0.3,
+                                shadowRadius: 2 
+                            }}>
+                                
+                                <Text style={styles.largeText}>Pat yourself on the back!
+                                 </Text> 
+                                <Text style={styles.text}>
+                                {"\n"} You just {"\n"}<Text style={{fontWeight: "bold",
+                            }}>mastered</Text>{"\n"} a habbit!
+                             
+                            </Text>
+    
+                            <TouchableOpacity
+                                style={styles.customBtnBG}
+                                onPress={singleHabbitObject.handleAddHabbitView.bind(this)}
+                            >
+                                <Text style={styles.customBtnText}>Create a New Habbit</Text>
+                            </TouchableOpacity>
+    
+                            </View>
+                            
+                            
+                           
+                        </View>
+                    </View>
+            </View>)
+    }
 }
 
