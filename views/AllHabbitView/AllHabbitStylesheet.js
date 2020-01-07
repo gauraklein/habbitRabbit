@@ -27,6 +27,13 @@ export const styles = StyleSheet.create({
         width: 60,
         padding: 0,
         // borderWidth: 3,
+    },
+    arrow: {
+        height: 20,
+        width: 30,
+        marginLeft: 20,
+        opacity: 0.6
+
     }
 
 });

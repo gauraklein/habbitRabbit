@@ -57,6 +57,7 @@ export const LoginComponent = (props) => {
                 <Image
                 style={{
                 // flex: 1
+                marginBottom: 25
                 }}
                 source={require('../../assets/RabbitFaceForIntro.gif')} />
             
@@ -83,7 +84,7 @@ export const LoginComponent = (props) => {
 
           </View>
 
-          < NavBar {...props} />
+          {/* < NavBar {...props} /> */}
 
           </LinearGradient>    
         </View>
