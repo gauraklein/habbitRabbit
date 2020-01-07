@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         // backgroundColor: '#EAEAEA',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         color: '#ddd'
         // borderWidth: 2
        
@@ -14,6 +14,17 @@ export const styles = StyleSheet.create({
     },
     text: {
         color: 'black'
+    },
+    button: {
+        // backgroundColor: "green",
+        // borderRadius: 4,
+        borderBottomWidth: 3,
+        paddingHorizontal: 10,
+        borderColor: "#edf5e1"
+    },
+    buttonText: {
+        fontSize: 20,
+        color: "#edf5e1"
     }
 
 });

@@ -1,4 +1,4 @@
-import {HABBIT_CHECKIN, ADD_HABBIT_VIEW} from "../../views/HabbitView/HabbitViewActions";
+import {HABBIT_CHECKIN, ADD_HABBIT_VIEW, UNHAPPY_RABBIT} from "../../views/HabbitView/HabbitViewActions";
 import { TYPE_HABBIT, ADD_HABBIT, HABBIT_VIEW} from "../../views/AddHabbitView/AddHabbitActions";
 import { ALL_HABBIT_VIEW } from '../../views/AllHabbitView/AllHabbitActions'
 
@@ -12,7 +12,8 @@ const initState = {
     habbitArray: [
        
     ],
-    habbitToDisplayIndex: 0
+    habbitToDisplayIndex: 0,
+   
 };
 
 const rootReducer = (state = initState, action) => {
@@ -23,14 +24,23 @@ const rootReducer = (state = initState, action) => {
         case HABBIT_CHECKIN: {
             console.log('hit habbit check on reducer', action.payload)
             state.habbitArray[action.payload].habbitDailyCount++
+            state.habbitArray[action.payload].isRabbitHappy = true
             return {
                 ...state,
-                habbitDailyCount: Math.random()
-                
-
+                habbitDailyCount: Math.random(),
             }
         }
             break;
+
+        case UNHAPPY_RABBIT: {
+            console.log('making rabbit unhappy on reducer')
+            state.habbitArray[action.payload].isRabbitHappy = false
+            return {
+                ...state,
+                // habbitDailyCount: Math.random(),
+            }
+
+        }    
 
         case ADD_HABBIT_VIEW: {
             console.log('Add habbit view hit reducer')
@@ -53,6 +63,7 @@ const rootReducer = (state = initState, action) => {
 
         case ALL_HABBIT_VIEW: {
             console.log('viewing all habbits from reducer')
+            
             return {
                 ...state,
                 appView: 'AllHabbitView'

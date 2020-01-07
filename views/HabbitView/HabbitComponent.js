@@ -43,6 +43,7 @@ export const HabbitComponent = (props) => {
 
                     <SingleHabbitScreen 
                     {...props.habbitArray[props.habbitToDisplayIndex]}
+                    makeRabbitUnhappy={props.makeRabbitUnhappy}
                     handleHabbitCheckin={props.handleHabbitCheckin}
                     handleAddHabbitView={props.handleAddHabbitView}>
                         <Text>TEST</Text>
@@ -64,6 +65,11 @@ export const HabbitComponent = (props) => {
 
 function SingleHabbitScreen (singleHabbitObject) {
     console.log(singleHabbitObject, 'this is the single habbit object')
+    let rabbitSource = require('../../assets/rabbitChilling.gif')
+    if (singleHabbitObject.isRabbitHappy) {
+       rabbitSource = require('../../assets/rabbitHeartsLoop.gif')
+       singleHabbitObject.makeRabbitUnhappy(singleHabbitObject.habbitId)
+    } 
     return (
         <View
               style={{flex: 1,
@@ -74,7 +80,7 @@ function SingleHabbitScreen (singleHabbitObject) {
                     <View style={styles.image}>
                         <Image style={{flex: 1,
                             width: Dimensions.get('window').width,
-                            marginTop: 40}} source={require('../../assets/rabbitChilling.gif')} />
+                            marginTop: 40}} source={rabbitSource} />
                             {/* <Text style={styles.text}>RabbitGoesHere</Text> */}
                     </View>    
                 </View>
@@ -133,3 +139,4 @@ function SingleHabbitScreen (singleHabbitObject) {
         </View>
     )
 }
+

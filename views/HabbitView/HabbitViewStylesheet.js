@@ -45,8 +45,8 @@ export const styles = StyleSheet.create({
      /* Here, style the text of your button */
      customBtnText: {
         fontSize: 20,
-        fontWeight: '400',
-        color: "black",
+        fontWeight: '600',
+        color: "#edf5e1",
     },
 
   /* Here, style the background of your button */

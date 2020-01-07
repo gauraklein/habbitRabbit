@@ -1,8 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, Button,TextInput, Text, View } from 'react-native';
+import { Image, Dimensions, TouchableOpacity, Button,TextInput, Text, View } from 'react-native';
 import { styles } from './loginStylesheet'
 import {NavBar} from "../../components/NavBar/NavBar";
-import FBLoginButton from '../../components/FBLoginButton'
+import { LinearGradient } from 'expo-linear-gradient';
 import { AuthSession, Linking } from 'expo'
 import * as WebBrowser from 'expo-web-browser'
 
@@ -11,18 +11,84 @@ export const LoginComponent = (props) => {
     console.log(props, 'from login page');
 
     return(
-        <View style={styles.container}>
+        <View style={{
+          height: Dimensions.get('window').height
+        }}>
+         <LinearGradient
+          colors={['#41b3a3', '#7DC3AF']}
+          style={{
+            // position: 'absolute',
+            left: 0,
+            right: 0,
+            top: 0,
+            height: Dimensions.get('window').height,
+            // borderWidth: 10
+          }}
+        >
+          <View style={{
+            flex: 9
+          }}>
+            <View
+            style={{
+              flex: 1,
+              alignItems: "center",
+              justifyContent: "center"
+            }} >
+
+                <Text 
+                style={styles.largeText}>
+                  Welcome to {"\n"}Habbit Rabbit!
+                </Text>
+                <Text
+                  style={styles.text}>
+                    The app that helps you create lasting habits!
+                  </Text>
+
+            </View>  
+
+            <View
+                style={{ flex: 1,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  // borderWidth: 3  
+                  
+              }}>
+
+                <Image
+                style={{
+                // flex: 1
+                marginBottom: 25
+                }}
+                source={require('../../assets/RabbitFaceForIntro.gif')} />
+            
+            </View>    
+
+            <View
+            style={{
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: 20
+            }} >
+               <TouchableOpacity
+              style={styles.customBtnBG}
+            onPress={props.handleAddHabbitView.bind(this)}>
+              <Text 
+              style={styles.customBtnText}>
+                Add a Habbit Now!
+              </Text>
+            </TouchableOpacity>
+            
             <Login />
-            < NavBar {...props} />
+            </View>
+
+          </View>
+
+          {/* < NavBar {...props} /> */}
+
+          </LinearGradient>    
         </View>
     )
-}
-
-async function loginWithFB() {
-    await console.log('loginfunction')
-    await fetch('http://localhost:3000/auth/facebook')
-    await console.log('login function 2')
-
 }
 
 export default class Login extends React.Component {
@@ -33,14 +99,24 @@ export default class Login extends React.Component {
   if (this.state.authResult.type && this.state.authResult.type === 'success') {
       console.log(this.state.authResult, "auth result")
         return (
-          <View style={styles.container}>
+          <View >
               <Text>{`Hey there, user!`}</Text>
           </View>
         )
       } else {
         return (
-          <View style={styles.container}>
-            <Button title="Login with Facebook" onPress={this.handleOAuthLogin} />
+          <View style={{
+            flex: 1,
+
+          }}>
+            <TouchableOpacity
+              style={styles.customBtnBG}
+            onPress={this.handleOAuthLogin}>
+              <Text 
+              style={styles.customBtnText}>
+                Login With Facebook
+              </Text>
+            </TouchableOpacity>
           </View>
         )
       }
@@ -73,10 +149,3 @@ export default class Login extends React.Component {
       Linking.removeEventListener('url', this.handleRedirect)
   }
   }
-//   const styles = StyleSheet.create({
-//     container: {
-//       flex: 1,
-//       alignItems: 'center',
-//       justifyContent: 'center',
-//     },
-//   })

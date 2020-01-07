@@ -131,8 +131,11 @@ const AllHabbitDisplay = (singleHabbitObject) => {
                                 </Text>
                             </View> 
                             
-                            <View>
-                                
+                            <View style={{flex: 1}}>
+                                <Image
+                                style={styles.arrow}
+                                resizeMode="contain"
+                                    source={require('../../assets/Arrow.png')} />
                             </View>   
             </View>
         </TouchableOpacity>
