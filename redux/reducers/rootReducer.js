@@ -17,7 +17,7 @@ const initState = {
    
 };
 
-const rootReducer = (state = initState, action) => {
+export const rootReducer = (state = initState, action) => {
 
     console.log(action.type, '----- action type')
 
