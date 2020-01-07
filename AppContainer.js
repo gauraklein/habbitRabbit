@@ -9,12 +9,14 @@ import {AddHabbitComponent} from "./views/AddHabbitView/AddHabbitComponent";
 import {NavBar} from "./components/NavBar/NavBar";
 import { LoginComponent } from './views/login/LoginComponent'
 import { AllHabbitComponent } from './views/AllHabbitView/AllHabbitComponent'
+import { AllHabbitAsyncComponent } from './views/AllHabbitView/AllHabbitAsyncComponent'
 
 // Functions
 // import { testFunction} from "./redux/actions/testAction";
 import { handleHabbitCheckin, handleAddHabbitView, makeRabbitUnhappy } from "./views/HabbitView/HabbitViewActions";
 import {handleTypeHabbit, handleAddHabbit, handleHabbitView, habbitTooShortAknowledgement } from "./views/AddHabbitView/AddHabbitActions";
-import { handleAllHabbitView } from './views/AllHabbitView/AllHabbitActions'
+import { handleAllHabbitView, getHabbitsFromApi } from './views/AllHabbitView/AllHabbitActions'
+
 
 
 
@@ -47,6 +49,10 @@ const AppContainer = (props) => {
             < AllHabbitComponent {...props} />
 
         )
+    } else if (props.appView === 'AllHabbitsAsync') {
+        return (
+            <AllHabbitAsyncComponent {...props} />
+        )
     }
 };
 
@@ -74,7 +80,9 @@ const mapDispatchToProps = (dispatch) => {
         handleHabbitView: (habbitId) => dispatch(handleHabbitView(habbitId)),
         handleAllHabbitView: () => dispatch(handleAllHabbitView()),
         makeRabbitUnhappy: (habbitId) => dispatch(makeRabbitUnhappy(habbitId)),
+        getHabbitsFromApi: () => dispatch(getHabbitsFromApi()),
         habbitTooShortAknowledgement: () => dispatch(habbitTooShortAknowledgement())
+
     }
 };
 

@@ -57,9 +57,11 @@ export const LoginComponent = (props) => {
                 <Image
                 style={{
                 // flex: 1
-                marginBottom: 25
+                marginBottom: 25,
+                height: 225
                 }}
-                source={require('../../assets/RabbitFaceForIntro.gif')} />
+                resizeMode="cover"
+                source={require('../../assets/happyRabbitFace.gif')} />
             
             </View>    
 
@@ -70,16 +72,10 @@ export const LoginComponent = (props) => {
               alignItems: "center",
               marginTop: 20
             }} >
-               <TouchableOpacity
-              style={styles.customBtnBG}
-            onPress={props.handleAddHabbitView.bind(this)}>
-              <Text 
-              style={styles.customBtnText}>
-                Add a Habbit Now!
-              </Text>
-            </TouchableOpacity>
+               
             
-            <Login />
+            <Login {...props}
+            />
             </View>
 
           </View>
@@ -100,7 +96,23 @@ export default class Login extends React.Component {
       console.log(this.state.authResult, "auth result")
         return (
           <View >
-              <Text>{`Hey there, user!`}</Text>
+            <TouchableOpacity
+              style={styles.customBtnBG}
+            onPress={this.props.handleAddHabbitView.bind(this)}>
+              <Text 
+              style={styles.customBtnText}>
+                Add a Habbit Now!
+              </Text>
+            </TouchableOpacity>
+
+              <TouchableOpacity
+              style={styles.customBtnBG}
+            onPress={this.props.handleAllHabbitView.bind(this)}>
+              <Text 
+              style={styles.customBtnText}>
+                View Your Habbits! 
+              </Text>
+            </TouchableOpacity>
           </View>
         )
       } else {
