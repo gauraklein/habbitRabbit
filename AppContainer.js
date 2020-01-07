@@ -14,8 +14,9 @@ import { AllHabbitAsyncComponent } from './views/AllHabbitView/AllHabbitAsyncCom
 // Functions
 // import { testFunction} from "./redux/actions/testAction";
 import { handleHabbitCheckin, handleAddHabbitView, makeRabbitUnhappy } from "./views/HabbitView/HabbitViewActions";
-import {handleTypeHabbit, handleAddHabbit, handleHabbitView } from "./views/AddHabbitView/AddHabbitActions";
+import {handleTypeHabbit, handleAddHabbit, handleHabbitView, habbitTooShortAknowledgement } from "./views/AddHabbitView/AddHabbitActions";
 import { handleAllHabbitView, getHabbitsFromApi } from './views/AllHabbitView/AllHabbitActions'
+
 
 
 
@@ -65,6 +66,7 @@ const mapStateToProps = (state) => {
        appView: state.appView,
        habbitArray: state.habbitArray,
        habbitToDisplayIndex: state.habbitToDisplayIndex,
+       habbitTooShort: state.habbitTooShort
        
    }
 };
@@ -78,7 +80,9 @@ const mapDispatchToProps = (dispatch) => {
         handleHabbitView: (habbitId) => dispatch(handleHabbitView(habbitId)),
         handleAllHabbitView: () => dispatch(handleAllHabbitView()),
         makeRabbitUnhappy: (habbitId) => dispatch(makeRabbitUnhappy(habbitId)),
-        getHabbitsFromApi: () => dispatch(getHabbitsFromApi())
+        getHabbitsFromApi: () => dispatch(getHabbitsFromApi()),
+        habbitTooShortAknowledgement: () => dispatch(habbitTooShortAknowledgement())
+
     }
 };
 
