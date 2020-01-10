@@ -1,5 +1,6 @@
 # Habbit Rabbit
 
+![demo](./habbitRabbitDemo.gif)
 
 ## About Habbit Rabbit
 Habbit Rabbit is an iOS App built with Expo and React-Native that tracks productive habits that you want to build and monitors your progress towards developing them. This repo holds the front-end. The back-end Repository can be found [here](https://github.com/tjeve/habbitRabbit-backend2).
